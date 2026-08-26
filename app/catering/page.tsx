@@ -107,7 +107,7 @@ export default async function CateringPage() {
 
         <div className="container-wide mx-auto relative z-10 px-4">
           <div className="flex justify-center items-center gap-4 mb-6 reveal">
-            <span className="text-[#8F2A12] text-sm font-bold tracking-[0.2em] uppercase">03 — Catering</span>
+            <span className="text-[#8F2A12] text-sm font-bold tracking-[0.2em] uppercase">Catering</span>
           </div>
 
           <h1 className="display-xl reveal stagger-1 max-w-4xl mx-auto mb-8 text-[#24130A]" style={{ fontFamily: "var(--font-display)" }}>

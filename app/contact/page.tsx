@@ -69,7 +69,7 @@ export default async function ContactPage() {
             <div className="flex flex-col gap-8 reveal">
               <div className="flex items-center gap-4 mb-2">
                 <h2 className="text-3xl font-bold text-[#24130A]" style={{ fontFamily: "var(--font-display)" }}>
-                  01 <span className="text-[#A83216] mx-2">—</span> Reach Us
+                  Reach Us
                 </h2>
               </div>
               
@@ -139,7 +139,7 @@ export default async function ContactPage() {
             <div className="reveal stagger-2">
               <div className="flex items-center gap-4 mb-8">
                 <h2 className="text-3xl font-bold text-[#24130A]" style={{ fontFamily: "var(--font-display)" }}>
-                  02 <span className="text-[#A83216] mx-2">—</span> Send a Message
+                  Send a Message
                 </h2>
               </div>
               <div className="bg-[#FCF8F3] border border-[#D49A2A]/20 rounded-xl p-8 md:p-10 shadow-sm">
