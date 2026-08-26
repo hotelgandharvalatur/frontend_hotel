@@ -100,6 +100,7 @@ export function MenuPageCarousel({ images }: MenuPageCarouselProps) {
                     src={img}
                     alt={`Menu Page ${index + 1}`}
                     fill
+                    unoptimized={true}
                     className="object-cover"
                     sizes="(max-width: 768px) 260px, 380px"
                   />

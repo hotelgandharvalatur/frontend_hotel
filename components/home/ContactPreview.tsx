@@ -87,13 +87,17 @@ export function ContactPreview() {
             </div>
           </div>
 
-          {/* Map Placeholder */}
+          {/* Map */}
           <div className="w-full min-h-[400px] lg:min-h-full rounded-sm overflow-hidden relative shadow-lg" style={{ backgroundColor: "#F5E9D2", border: "1px solid rgba(212, 154, 42, 0.2)" }}>
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center" style={{ color: "rgba(36, 19, 10, 0.5)" }}>
-              <MapPin size={48} style={{ color: "rgba(212, 154, 42, 0.5)", marginBottom: "1rem" }} />
-              <p className="font-bold text-lg mb-2">Map Integration</p>
-              <p className="text-sm">Real Google Maps iframe or image goes here.</p>
-            </div>
+            <iframe 
+              src="https://maps.google.com/maps?width=100%25&height=100%25&hl=en&q=Gandharva%20Hotel,%20Ausa%20Road,%20Near%20Rajiv%20Gandhi%20Chowk,%20Latur,%20Maharashtra%20413512+(Gandharva%20Hotel)&t=&z=15&ie=UTF8&iwloc=B&output=embed" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0, position: "absolute", top: 0, left: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
 
         </div>

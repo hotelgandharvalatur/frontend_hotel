@@ -12,11 +12,11 @@ import { MenuPageCarousel } from "@/components/ui/MenuPageCarousel";
 import Link from "next/link";
 
 const MENU_IMAGES = [
-  "/images/menu/menu_only.png",
-  "/images/menu/menu_only.png",
-  "/images/menu/menu_only.png",
-  "/images/menu/menu_only.png",
-  "/images/menu/menu_only.png",
+  "/images/menu/image.png",
+  "/images/menu/image.png",
+  "/images/menu/image.png",
+  "/images/menu/image.png",
+  "/images/menu/image.png",
 ];
 
 export default function MenuPage() {

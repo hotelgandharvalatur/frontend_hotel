@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   description:
     "Hotel Bee is a boutique hotel, restaurant, banquet, and events venue delivering unforgettable experiences. Explore our menu, book a hall, register for events, or enquire about catering.",
   keywords: ["hotel", "restaurant", "banquet", "events", "catering", "Hotel Bee"],
+  icons: {
+    icon: "/vercel.svg",
+  },
   openGraph: {
     title: "Hotel Bee — Premium Hospitality & Events",
     description:
