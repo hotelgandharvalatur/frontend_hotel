@@ -6,11 +6,11 @@ import Image from "next/image";
 import { ArrowRight, Image as ImageIcon, Building2 } from "lucide-react";
 
 const EXPERIENCES = [
-  { number: "01", title: "Pure Vegetarian Dining", desc: "Authentic vegetarian dishes prepared with traditional recipes and fresh ingredients.", image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop" },
-  { number: "02", title: "Banquets & Celebrations", desc: "Beautiful spaces for weddings, receptions, birthdays and family gatherings.", image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=800&auto=format&fit=crop" },
-  { number: "03", title: "Special Events", desc: "Celebrate important moments with delicious food, comfortable spaces and warm hospitality.", image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800&auto=format&fit=crop" },
-  { number: "04", title: "Family Gatherings", desc: "A welcoming atmosphere designed for memorable meals with family and friends.", image: "https://images.unsplash.com/photo-1543352634-99a5d50ae78e?q=80&w=800&auto=format&fit=crop" },
-  { number: "05", title: "Daily Ritual", desc: "Simple, wholesome meals made the same way, every single day.", image: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?q=80&w=800&auto=format&fit=crop" },
+  { number: "01", title: "Pure Vegetarian Dining", desc: "Authentic vegetarian dishes prepared with traditional recipes and fresh ingredients.", image: "/images/scroll_animation/DSC02114.JPG" },
+  { number: "02", title: "Banquets & Celebrations", desc: "Beautiful spaces for weddings, receptions, birthdays and family gatherings.", image: "/images/scroll_animation/IMG_8855.png" },
+  { number: "03", title: "Special Events", desc: "Celebrate important moments with delicious food, comfortable spaces and warm hospitality.", image: "/images/scroll_animation/image.png" },
+  { number: "04", title: "Family Gatherings", desc: "A welcoming atmosphere designed for memorable meals with family and friends.", image: "/images/scroll_animation/IMG_2741.JPG%20(1).jpeg" },
+  { number: "05", title: "Daily Ritual", desc: "Simple, wholesome meals made the same way, every single day.", image: "/images/scroll_animation/DSC02160.JPG" },
 ];
 
 export function AmbienceSection() {

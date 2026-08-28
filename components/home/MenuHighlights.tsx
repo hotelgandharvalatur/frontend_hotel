@@ -4,11 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 
 const POPULAR_DISHES = [
-  { name: "Paneer Butter Masala", price: "₹220", image: "https://images.unsplash.com/photo-1631452180519-c014fe946bc0?q=80&w=600&auto=format&fit=crop" },
-  { name: "Veg Kolhapuri", price: "₹200", image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?q=80&w=600&auto=format&fit=crop" },
-  { name: "Veg Biryani", price: "₹210", image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?q=80&w=600&auto=format&fit=crop" },
-  { name: "Masala Dosa", price: "₹160", image: "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?q=80&w=600&auto=format&fit=crop" },
-  { name: "Manchurian", price: "₹180", image: "https://images.unsplash.com/photo-1626804475297-41609ea004eb?q=80&w=600&auto=format&fit=crop" },
+  { name: "Paneer Butter Masala", price: "₹220", image: "/images/menu/image%20copy.png" },
+  { name: "Veg Kolhapuri", price: "₹200", image: "/images/menu/image%20copy%202.png" },
+  { name: "Veg Biryani", price: "₹210", image: "/images/menu/image%20copy%203.png" },
+  { name: "Masala Dosa", price: "₹160", image: "/images/menu/image%20copy%204.png" },
+  { name: "Manchurian", price: "₹180", image: "/images/menu/image%20copy%205.png" },
   { name: "Gulab Jamun", price: "₹120", image: "https://images.unsplash.com/photo-1596560548464-f010549b84d7?q=80&w=600&auto=format&fit=crop" },
 ];
 
