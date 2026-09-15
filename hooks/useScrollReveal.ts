@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useCallback } from "react";
 
-interface UseScrollRevealOptions {
+interface UseScrollRevealOptions {      
   threshold?: number;
   once?: boolean;
 }

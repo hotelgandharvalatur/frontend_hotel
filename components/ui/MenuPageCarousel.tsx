@@ -7,10 +7,11 @@ import Image from "next/image";
 
 interface MenuPageCarouselProps {
   images: string[];
+  initialIndex?: number;
 }
 
-export function MenuPageCarousel({ images }: MenuPageCarouselProps) {
-  const [currentIndex, setCurrentIndex] = useState(Math.floor(images.length / 2));
+export function MenuPageCarousel({ images, initialIndex = 0 }: MenuPageCarouselProps) {
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -76,7 +77,7 @@ export function MenuPageCarousel({ images }: MenuPageCarouselProps) {
 
             return (
               <motion.div
-                key={index}
+                key={`${img}-${index}`}
                 className="absolute w-[260px] md:w-[380px] aspect-[1/1.414] bg-[#FCF8F3] rounded-md shadow-2xl overflow-hidden cursor-pointer border-2 border-[#D49A2A]/20"
                 animate={{
                   x,

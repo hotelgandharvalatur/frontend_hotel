@@ -12,11 +12,13 @@ import { useCart } from "@/context/CartContext";
 import { toast } from "sonner";
 
 const MENU_IMAGES = [
-  "/images/menu/image.png",
-  "/images/menu/image.png",
-  "/images/menu/image.png",
-  "/images/menu/image.png",
-  "/images/menu/image.png",
+  "/images/display_menu/07.jpg.jpeg",
+  "/images/display_menu/DSC02160.JPG",
+  "/images/display_menu/02+.jpg.jpeg",
+  "/images/display_menu/06.jpg.jpeg",
+  "/images/display_menu/04.jpg.jpeg",
+  "/images/display_menu/05.jpg.jpeg",
+  "/images/display_menu/03+.jpg.jpeg",
 ];
 
 export default function MenuPage() {
@@ -229,7 +231,7 @@ export default function MenuPage() {
                         {item.description && (
                           <p className="text-[13px] text-[#24130A]/75 line-clamp-2 mb-3 leading-relaxed">{item.description}</p>
                         )}
-                        
+
                         <div className="mt-auto pt-4 border-t border-[#D49A2A]/10 flex items-center justify-between gap-3" style={{ fontFamily: "'Inter', sans-serif" }}>
                           <p className="font-bold text-[17px] text-[#8F2A12]">
                             ₹{item.price}
