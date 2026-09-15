@@ -2,14 +2,14 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
-import { Search } from "lucide-react";
+import { Search, Plus, Minus, Send } from "lucide-react";
 import { restaurantService } from "@/services/restaurant.service";
 import { MenuItem, RestaurantCategory } from "@/types";
-import { EmptyState, ErrorState } from "@/components/ui/EmptyState";
 import { PageLoader } from "@/components/ui/Spinner";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { MenuPageCarousel } from "@/components/ui/MenuPageCarousel";
-import Link from "next/link";
+import { useCart } from "@/context/CartContext";
+import { toast } from "sonner";
 
 const MENU_IMAGES = [
   "/images/menu/image.png",
@@ -31,6 +31,8 @@ export default function MenuPage() {
   const [totalPages, setTotalPages] = useState(1);
   const debounceRef = useRef<ReturnType<typeof setTimeout>>(undefined);
   const containerRef = useScrollReveal();
+
+  const { addToCart, updateQuantity, getItemQuantity, setIsCartOpen } = useCart();
 
   const fetchMenu = useCallback(
     async (search: string, category: string, p: number) => {
@@ -195,54 +197,78 @@ export default function MenuPage() {
           ) : (
             <>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
-                {items.map((item, i) => (
-                  <article
-                    key={item._id}
-                    className="group bg-[#FCF8F3] rounded-2xl overflow-hidden shadow-sm border border-[#D49A2A]/10 hover:shadow-md transition-all duration-300 flex flex-col"
-                  >
-                    {/* Image */}
-                    <div className="relative w-full aspect-[4/3] overflow-hidden bg-[#EFE8DA]">
-                      {item.image ? (
-                        <Image
-                          src={item.image}
-                          alt={item.name}
-                          fill
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        />
-                      ) : (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="text-[#24130A]/20 text-3xl">🍽</span>
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Content */}
-                    <div className="p-6 flex flex-col flex-grow">
-                      <h3 className="font-bold text-[1.15rem] text-[#24130A] mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
-                        {item.name}
-                      </h3>
-                      {item.description && (
-                        <p className="text-[13px] text-[#24130A]/75 line-clamp-2 mb-3 leading-relaxed">{item.description}</p>
-                      )}
-                      <p className="font-bold text-[15px] text-[#8F2A12] mb-4">
-                        ₹{item.price}
-                      </p>
-
-                      <div className="mt-auto pt-4 border-t border-[#D49A2A]/10 flex items-center gap-3">
-                        <Link
-                          href="#"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 group/swiggy"
-                        >
-                          <span className="bg-[#fc8019] text-white text-[11px] font-bold tracking-wide px-2 py-0.5 rounded-sm">swiggy</span>
-                          <span className="text-[12px] font-medium text-[#24130A]/80 group-hover/swiggy:text-[#fc8019] transition-colors">Order on Swiggy</span>
-                        </Link>
+                {items.map((item) => {
+                  const qty = getItemQuantity(item._id);
+                  return (
+                    <article
+                      key={item._id}
+                      className="group bg-[#FCF8F3] rounded-2xl overflow-hidden shadow-sm border border-[#D49A2A]/10 hover:shadow-md transition-all duration-300 flex flex-col"
+                    >
+                      {/* Image */}
+                      <div className="relative w-full aspect-[4/3] overflow-hidden bg-[#EFE8DA]">
+                        {item.image ? (
+                          <Image
+                            src={item.image}
+                            alt={item.name}
+                            fill
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          />
+                        ) : (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="text-[#24130A]/20 text-3xl">🍽</span>
+                          </div>
+                        )}
                       </div>
-                    </div>
-                  </article>
-                ))}
+
+                      {/* Content */}
+                      <div className="p-6 flex flex-col flex-grow">
+                        <h3 className="font-bold text-[1.15rem] text-[#24130A] mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
+                          {item.name}
+                        </h3>
+                        {item.description && (
+                          <p className="text-[13px] text-[#24130A]/75 line-clamp-2 mb-3 leading-relaxed">{item.description}</p>
+                        )}
+                        
+                        <div className="mt-auto pt-4 border-t border-[#D49A2A]/10 flex items-center justify-between gap-3" style={{ fontFamily: "'Inter', sans-serif" }}>
+                          <p className="font-bold text-[17px] text-[#8F2A12]">
+                            ₹{item.price}
+                          </p>
+
+                          {qty > 0 ? (
+                            <div className="flex items-center gap-2 bg-[#8F2A12] text-[#FFF7E8] px-3 py-1.5 rounded-lg text-sm font-semibold shadow-sm">
+                              <button
+                                onClick={() => updateQuantity(item._id, qty - 1)}
+                                className="w-5 h-5 flex items-center justify-center hover:bg-[#FFF7E8]/20 rounded transition-colors"
+                                aria-label="Decrease quantity"
+                              >
+                                <Minus size={14} />
+                              </button>
+                              <span className="w-5 text-center text-xs font-bold">{qty}</span>
+                              <button
+                                onClick={() => updateQuantity(item._id, qty + 1)}
+                                className="w-5 h-5 flex items-center justify-center hover:bg-[#FFF7E8]/20 rounded transition-colors"
+                                aria-label="Increase quantity"
+                              >
+                                <Plus size={14} />
+                              </button>
+                            </div>
+                          ) : (
+                            <button
+                              onClick={() => {
+                                addToCart(item);
+                                toast.success(`Added ${item.name} to cart`);
+                              }}
+                              className="flex items-center gap-1.5 bg-[#EFE8DA] hover:bg-[#8F2A12] text-[#8F2A12] hover:text-[#FFF7E8] px-4 py-1.5 rounded-lg text-xs font-bold transition-all border border-[#D49A2A]/30 shadow-sm"
+                            >
+                              <Plus size={14} /> Add
+                            </button>
+                          )}
+                        </div>
+                      </div>
+                    </article>
+                  );
+                })}
               </div>
 
               {/* Pagination */}
@@ -272,7 +298,7 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* 4. Swiggy Ordering Section */}
+      {/* 4. WhatsApp Direct Order Section */}
       <section className="py-20 md:py-28 relative overflow-hidden bg-[#24130A] border-t-4 border-[#8F2A12]">
         {/* Background texture/image */}
         <div className="absolute inset-0 opacity-15">
@@ -288,16 +314,14 @@ export default function MenuPage() {
             Enjoy Gandharva at Home
           </h2>
           <p className="text-[1.1rem] text-[#FFF7E8]/80 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Order your favorite pure veg dishes online from Swiggy and experience the finest flavors delivered fresh to your doorstep.
+            Order your favorite pure veg dishes online directly via WhatsApp and experience the finest flavors delivered fresh to your doorstep.
           </p>
-          <Link
-            href="#" // Add actual Swiggy URL here when provided
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-10 py-4 bg-[#fc8019] hover:bg-[#e06c10] text-white text-[1.05rem] font-bold rounded-lg transition-transform hover:scale-105 shadow-2xl tracking-wide"
+          <button
+            onClick={() => setIsCartOpen(true)}
+            className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-[#25D366] hover:bg-[#1ebc57] text-white text-[1.05rem] font-bold rounded-lg transition-transform hover:scale-105 shadow-2xl tracking-wide"
           >
-            Order Now on Swiggy
-          </Link>
+            <Send size={20} /> View Cart & Order on WhatsApp
+          </button>
         </div>
       </section>
 

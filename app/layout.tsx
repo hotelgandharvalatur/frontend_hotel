@@ -3,6 +3,9 @@ import { Cormorant_Garamond } from "next/font/google";
 import { Toaster } from "sonner";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
+import { CartProvider } from "@/context/CartContext";
+import { CartDrawer } from "@/components/cart/CartDrawer";
+import { CartFloatingButton } from "@/components/cart/CartFloatingButton";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -43,20 +46,24 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="flex flex-col min-h-full">
-        <Nav />
-        <main className="flex-1 pt-16">{children}</main>
-        <Footer />
-        <Toaster
-          theme="dark"
-          position="bottom-right"
-          toastOptions={{
-            style: {
-              background: "var(--surface-2)",
-              border: "1px solid var(--border)",
-              color: "var(--warm-white)",
-            },
-          }}
-        />
+        <CartProvider>
+          <Nav />
+          <main className="flex-1 pt-16">{children}</main>
+          <Footer />
+          <CartDrawer />
+          <CartFloatingButton />
+          <Toaster
+            theme="dark"
+            position="bottom-right"
+            toastOptions={{
+              style: {
+                background: "var(--surface-2)",
+                border: "1px solid var(--border)",
+                color: "var(--warm-white)",
+              },
+            }}
+          />
+        </CartProvider>
       </body>
     </html>
   );

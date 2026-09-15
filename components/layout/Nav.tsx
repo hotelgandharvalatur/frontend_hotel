@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingBag } from "lucide-react";
+import { useCart } from "@/context/CartContext";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -21,6 +22,7 @@ export function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const { totalItems, setIsCartOpen } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,8 +60,8 @@ export function Nav() {
           </Link>
 
           {/* Desktop nav & Button Group */}
-          <div className="hidden lg:flex items-center gap-8 xl:gap-12">
-            <div className="flex items-center gap-6 xl:gap-8">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-10">
+            <div className="flex items-center gap-5 xl:gap-8">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
                 return (
@@ -79,7 +81,23 @@ export function Nav() {
               })}
             </div>
 
-            <div className="flex items-center">
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => setIsCartOpen(true)}
+                className="relative p-2 text-[#FFF7E8] hover:text-[#D49A2A] transition-colors flex items-center gap-2 font-medium text-[13px]"
+                aria-label="Open cart"
+              >
+                <div className="relative">
+                  <ShoppingBag size={20} />
+                  {totalItems > 0 && (
+                    <span className="absolute -top-1.5 -right-2 bg-[#8F2A12] text-[#FFF7E8] text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                      {totalItems}
+                    </span>
+                  )}
+                </div>
+                <span className="hidden xl:inline">Cart</span>
+              </button>
+
               <Link
                 href="/contact"
                 className="text-[13px] font-bold flex items-center justify-center transition-all duration-200"
@@ -99,14 +117,28 @@ export function Nav() {
           </div>
 
           {/* Mobile menu button */}
-          <button
-            className="lg:hidden p-2"
-            style={{ color: "#FFF7E8" }}
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          <div className="flex items-center gap-3 lg:hidden">
+            <button
+              onClick={() => setIsCartOpen(true)}
+              className="relative p-2 text-[#FFF7E8]"
+              aria-label="Open cart"
+            >
+              <ShoppingBag size={20} />
+              {totalItems > 0 && (
+                <span className="absolute top-0 right-0 bg-[#8F2A12] text-[#FFF7E8] text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                  {totalItems}
+                </span>
+              )}
+            </button>
+
+            <button
+              className="p-2 text-[#FFF7E8]"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -119,7 +151,7 @@ export function Nav() {
           borderColor: "rgba(212, 154, 42, 0.2)"
         }}
       >
-        <div className="flex flex-col p-4 space-y-4 max-h-[80vh] overflow-y-auto">
+        <div className="flex flex-col p-4 space-y-3 max-h-[80vh] overflow-y-auto">
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -136,6 +168,21 @@ export function Nav() {
               </Link>
             );
           })}
+
+          <button
+            onClick={() => { setIsOpen(false); setIsCartOpen(true); }}
+            className="w-full text-left text-[14.6px] font-medium transition-colors p-2 rounded-sm flex items-center justify-between text-[#FFF7E8]"
+          >
+            <span className="flex items-center gap-2">
+              <ShoppingBag size={18} /> Cart
+            </span>
+            {totalItems > 0 && (
+              <span className="bg-[#8F2A12] text-[#FFF7E8] text-xs font-bold px-2 py-0.5 rounded-full">
+                {totalItems} items
+              </span>
+            )}
+          </button>
+
           <div className="pt-4 pb-2 border-t" style={{ borderColor: "rgba(212, 154, 42, 0.2)" }}>
             <Link
               href="/contact"

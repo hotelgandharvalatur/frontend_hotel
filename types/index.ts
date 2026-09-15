@@ -17,6 +17,7 @@ export interface BanquetHall {
   capacity: number;
   amenities: string[];
   images: string[];
+  imagePublicIds?: string[];
   pricePerDay: number;
   status: HallStatus;
   createdAt: string;
