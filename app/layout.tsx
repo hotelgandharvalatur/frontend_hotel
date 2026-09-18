@@ -53,13 +53,13 @@ export default function RootLayout({
           <CartDrawer />
           <CartFloatingButton />
           <Toaster
-            theme="dark"
             position="bottom-right"
+            closeButton
             toastOptions={{
               style: {
-                background: "var(--surface-2)",
-                border: "1px solid var(--border)",
-                color: "var(--warm-white)",
+                backgroundColor: "#24130A",
+                color: "#FFF7E8",
+                border: "1px solid rgba(212, 154, 42, 0.35)",
               },
             }}
           />

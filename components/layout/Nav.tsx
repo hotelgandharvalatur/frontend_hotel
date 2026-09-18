@@ -49,7 +49,7 @@ export function Nav() {
           <Link href="/" className="flex items-center group">
             <div className="relative h-[49px] w-[178px] md:h-[65px] md:w-[259px] lg:h-[73px] lg:w-[292px] transition-transform group-hover:scale-105">
               <Image
-                src="/images/logo/image.png"
+                src="/images/logo/logo1.png"
                 alt="Gandharva Hotel"
                 fill
                 sizes="(max-width: 768px) 178px, (max-width: 1024px) 259px, 292px"

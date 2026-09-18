@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Share2, Camera } from "lucide-react";
 
 export function Footer() {
   return (
@@ -97,29 +97,32 @@ export function Footer() {
                 href="https://www.facebook.com/share/1F5MUbbwEs/"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:-translate-y-1 text-sm font-bold"
+                aria-label="Facebook"
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:-translate-y-1 hover:bg-[#D49A2A]/20 focus-visible:ring-2 focus-visible:ring-[#D49A2A]"
                 style={{ backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(212, 154, 42, 0.3)", color: "#D49A2A" }}
               >
-                FB
+                <Share2 size={18} />
               </a>
               <a
                 href="https://www.instagram.com/gandharvapureveg_latur"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:-translate-y-1 text-sm font-bold"
+                aria-label="Instagram"
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:-translate-y-1 hover:bg-[#D49A2A]/20 focus-visible:ring-2 focus-visible:ring-[#D49A2A]"
                 style={{ backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(212, 154, 42, 0.3)", color: "#D49A2A" }}
               >
-                IG
+                <Camera size={18} />
               </a>
             </div>
           </div>
 
         </div>
 
-        {/* Copyright */}
-        <div className="mt-16 pt-6 flex flex-col md:flex-row items-center justify-between text-xs" style={{ borderTop: "1px solid rgba(255, 247, 232, 0.1)", color: "rgba(255, 247, 232, 0.5)" }}>
+        {/* Copyright & Credit */}
+        <div className="mt-16 pt-6 flex flex-col md:flex-row items-center justify-between text-xs gap-3" style={{ borderTop: "1px solid rgba(255, 247, 232, 0.1)", color: "rgba(255, 247, 232, 0.5)" }}>
           <p>© {new Date().getFullYear()} Gandharva Hotel. All rights reserved.</p>
-          <div className="flex gap-4 mt-4 md:mt-0">
+          <p className="text-center">Designed &amp; developed by BeeCreativess</p>
+          <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>

@@ -36,10 +36,10 @@ export function Hero() {
           {/* Main Heading */}
           <h1
             className="mb-0 font-display font-medium text-[36px] md:text-[46px] lg:text-[56px] reveal stagger-1"
-            style={{ color: "#FFF7E8", lineHeight: 1.05, letterSpacing: "-0.01em" }}
+            style={{ color: "#FFF7E8", lineHeight: 1.15, letterSpacing: "0.01em" }}
           >
-            Experience<br />the Taste of<br />
-            <span style={{ color: "#D49A2A" }}>Tradition</span>
+            मन तृप्त<br />
+            <span style={{ color: "#D49A2A" }}>करणारी चव</span>
           </h1>
 
           {/* Decorative Gold Divider */}
