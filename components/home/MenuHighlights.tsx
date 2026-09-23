@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { getCloudinaryUrl } from "@/lib/cloudinary";
 
 const POPULAR_DISHES = [
-  { name: "Paneer Butter Masala", price: "₹220", image: "/images/menu/image%20copy.png" },
-  { name: "Veg Kolhapuri", price: "₹200", image: "/images/menu/image%20copy%202.png" },
-  { name: "Veg Biryani", price: "₹210", image: "/images/menu/image%20copy%203.png" },
-  { name: "Masala Dosa", price: "₹160", image: "/images/menu/image%20copy%204.png" },
-  { name: "Manchurian", price: "₹180", image: "/images/menu/image%20copy%205.png" },
+  { name: "Paneer Butter Masala", price: "₹220", image: getCloudinaryUrl("hotel-gandharva/menu/image_copy", { width: 360 }) },
+  { name: "Veg Kolhapuri", price: "₹200", image: getCloudinaryUrl("hotel-gandharva/menu/image_copy_2", { width: 360 }) },
+  { name: "Veg Biryani", price: "₹210", image: getCloudinaryUrl("hotel-gandharva/menu/image_copy_3", { width: 360 }) },
+  { name: "Masala Dosa", price: "₹160", image: getCloudinaryUrl("hotel-gandharva/menu/image_copy_4", { width: 360 }) },
+  { name: "Manchurian", price: "₹180", image: getCloudinaryUrl("hotel-gandharva/menu/image_copy_5", { width: 360 }) },
   { name: "Gulab Jamun", price: "₹120", image: "https://images.unsplash.com/photo-1596560548464-f010549b84d7?q=80&w=600&auto=format&fit=crop" },
 ];
 

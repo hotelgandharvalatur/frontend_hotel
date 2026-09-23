@@ -9,6 +9,7 @@ import { AmbienceSection } from "@/components/home/AmbienceSection";
 
 import { ReviewsPreview } from "@/components/home/ReviewsPreview";
 import { ContactPreview } from "@/components/home/ContactPreview";
+import { InstagramSection } from "@/components/home/InstagramSection";
 
 export const metadata: Metadata = {
   title: "Gandharva Hotel — Pure Veg Restaurant & Banquet",
@@ -27,6 +28,7 @@ export default function HomePage() {
         
         <ReviewsPreview />
         <ContactPreview />
+        <InstagramSection />
       </div>
     </>
   );

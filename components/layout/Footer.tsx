@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Phone, Mail, Clock, Share2, Camera } from "lucide-react";
+import { getCloudinaryUrl } from "@/lib/cloudinary";
 
 export function Footer() {
   return (
@@ -14,7 +15,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <Link href="/" className="inline-block mb-6 relative h-16 w-64 transition-transform hover:scale-105">
               <Image
-                src="/images/logo/image.png"
+                src={getCloudinaryUrl("hotel-gandharva/logo/image")}
                 alt="Gandharva Hotel"
                 fill
                 sizes="256px"

@@ -4,13 +4,14 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Image as ImageIcon, Building2 } from "lucide-react";
+import { getCloudinaryUrl } from "@/lib/cloudinary";
 
 const EXPERIENCES = [
-  { number: "01", title: "Pure Vegetarian Dining", desc: "Authentic vegetarian dishes prepared with traditional recipes and fresh ingredients.", image: "/images/scroll_animation/DSC02114.JPG" },
-  { number: "02", title: "Banquets & Celebrations", desc: "Beautiful spaces for weddings, receptions, birthdays and family gatherings.", image: "/images/scroll_animation/IMG_8855.png" },
-  { number: "03", title: "Special Events", desc: "Celebrate important moments with delicious food, comfortable spaces and warm hospitality.", image: "/images/scroll_animation/image.png" },
-  { number: "04", title: "Family Gatherings", desc: "A welcoming atmosphere designed for memorable meals with family and friends.", image: "/images/scroll_animation/IMG_2741.JPG%20(1).jpeg" },
-  { number: "05", title: "Daily Ritual", desc: "Simple, wholesome meals made the same way, every single day.", image: "/images/scroll_animation/DSC02160.JPG" },
+  { number: "01", title: "Pure Vegetarian Dining", desc: "Authentic vegetarian dishes prepared with traditional recipes and fresh ingredients.", image: getCloudinaryUrl("hotel-gandharva/scroll_animation/DSC02114", { width: 800 }) },
+  { number: "02", title: "Banquets & Celebrations", desc: "Beautiful spaces for weddings, receptions, birthdays and family gatherings.", image: getCloudinaryUrl("hotel-gandharva/scroll_animation/IMG_8855", { width: 800 }) },
+  { number: "03", title: "Special Events", desc: "Celebrate important moments with delicious food, comfortable spaces and warm hospitality.", image: getCloudinaryUrl("hotel-gandharva/scroll_animation/image", { width: 800 }) },
+  { number: "04", title: "Family Gatherings", desc: "A welcoming atmosphere designed for memorable meals with family and friends.", image: getCloudinaryUrl("hotel-gandharva/scroll_animation/IMG_2741_1", { width: 800 }) },
+  { number: "05", title: "Daily Ritual", desc: "Simple, wholesome meals made the same way, every single day.", image: getCloudinaryUrl("hotel-gandharva/scroll_animation/DSC02160", { width: 800 }) },
 ];
 
 export function AmbienceSection() {

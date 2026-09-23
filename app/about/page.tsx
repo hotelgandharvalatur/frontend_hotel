@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Leaf, Soup, Users, Award, Calendar, ArrowRight } from "lucide-react";
 import { HomeScrollAnimations } from "../HomeScrollAnimations";
+import { getCloudinaryUrl } from "@/lib/cloudinary";
 
 export const metadata: Metadata = {
   title: "About Us | Gandharva Hotel",
@@ -22,12 +23,12 @@ export default function AboutPage() {
         <div className="absolute top-0 right-0 bottom-0 left-0 z-0 pointer-events-none">
           <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[65%]">
             <Image
-              src="/images/about/IMG_8855.png"
+              src={getCloudinaryUrl("hotel-gandharva/about/IMG_8855")}
               alt="Gandharva Hotel Interior"
               fill
               className="object-cover object-center"
               priority
-              unoptimized
+              sizes="(max-width: 1024px) 100vw, 65vw"
             />
             {/* Gradient Mask - fade starts sooner (further left) and stretches
                 all the way to the right edge for a slower, more gradual reveal */}
@@ -74,9 +75,10 @@ export default function AboutPage() {
           <div className="w-full lg:w-1/2 relative reveal">
             <div className="aspect-[4/3] lg:aspect-[1.1/1] relative rounded-2xl overflow-hidden shadow-2xl max-w-[65%] lg:max-w-[85%] mx-auto">
               <Image
-                src="/images/about/image.png"
+                src={getCloudinaryUrl("hotel-gandharva/about/image")}
                 alt="Gandharva Hotel Exterior"
                 fill
+                sizes="(max-width: 1024px) 85vw, 42vw"
                 className="object-cover"
               />
             </div>

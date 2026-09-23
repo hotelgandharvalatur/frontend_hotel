@@ -3,21 +3,22 @@
 import Link from "next/link";
 import Image from "next/image";
 import { UtensilsCrossed, CalendarDays } from "lucide-react";
+import { getCloudinaryUrl } from "@/lib/cloudinary";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[75dvh] lg:min-h-[85dvh] flex flex-col justify-center items-start overflow-hidden pt-[80px] pb-[70px]">
+    <section className="relative min-h-[calc(100dvh-64px)] flex flex-col justify-center items-start overflow-hidden pt-[80px] pb-[70px]">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/hero/IMG_2740.JPG.jpeg"
+          src={getCloudinaryUrl("hotel-gandharva/hero/IMG_2740")}
           alt="Gandharva Hotel Interior"
           fill
           priority
+          sizes="100vw"
           style={{
             objectFit: "cover",
             objectPosition: "center",
-            aspectRatio: "16 / 9"
           }}
         />
       </div>

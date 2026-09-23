@@ -11,6 +11,7 @@ import { StarRating } from "@/components/ui/StarRating";
 import { Button, LinkButton } from "@/components/ui/Button";
 import { Spinner, PageLoader } from "@/components/ui/Spinner";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { getCloudinaryUrl } from "@/lib/cloudinary";
 
 const schema = z.object({
   customerName: z.string().min(2, "Name is required"),
@@ -72,7 +73,7 @@ export default function ReviewsPage() {
       >
         <div 
           className="absolute inset-0 z-0 opacity-40 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/hero/IMG_2740.JPG.jpeg')" }}
+          style={{ backgroundImage: `url('${getCloudinaryUrl("hotel-gandharva/hero/IMG_2740")}')` }}
         />
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 pointer-events-none" />
         

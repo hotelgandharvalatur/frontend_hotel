@@ -10,15 +10,16 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { MenuPageCarousel } from "@/components/ui/MenuPageCarousel";
 import { useCart } from "@/context/CartContext";
 import { toast } from "sonner";
+import { getCloudinaryUrl } from "@/lib/cloudinary";
 
 const MENU_IMAGES = [
-  "/images/display_menu/07.jpg.jpeg",
-  "/images/display_menu/DSC02160.JPG",
-  "/images/display_menu/02+.jpg.jpeg",
-  "/images/display_menu/06.jpg.jpeg",
-  "/images/display_menu/04.jpg.jpeg",
-  "/images/display_menu/05.jpg.jpeg",
-  "/images/display_menu/03+.jpg.jpeg",
+  getCloudinaryUrl("hotel-gandharva/display_menu/07", { width: 1200 }),
+  getCloudinaryUrl("hotel-gandharva/display_menu/DSC02160", { width: 1200 }),
+  getCloudinaryUrl("hotel-gandharva/display_menu/02_plus", { width: 1200 }),
+  getCloudinaryUrl("hotel-gandharva/display_menu/06", { width: 1200 }),
+  getCloudinaryUrl("hotel-gandharva/display_menu/04", { width: 1200 }),
+  getCloudinaryUrl("hotel-gandharva/display_menu/05", { width: 1200 }),
+  getCloudinaryUrl("hotel-gandharva/display_menu/03_plus", { width: 1200 }),
 ];
 
 export default function MenuPage() {

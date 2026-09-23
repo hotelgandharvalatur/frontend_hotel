@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
+import { getCloudinaryUrl } from "@/lib/cloudinary";
 
 const EVENTS_LIST = [
   "Weddings",
@@ -24,7 +25,7 @@ export function BanquetPreview() {
             style={{ backgroundColor: "rgba(255, 247, 232, 0.05)", border: "1px solid rgba(212, 154, 42, 0.2)" }}
           >
             <Image
-              src="/images/banquet/banquet-main.jpg"
+              src={getCloudinaryUrl("hotel-gandharva/scroll_animation/IMG_8855", { width: 800 })}
               alt="Banquet Hall"
               fill
               className="object-cover"
