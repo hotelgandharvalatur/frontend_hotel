@@ -9,7 +9,8 @@ export interface InstagramMediaItem {
   media_url: string;
   thumbnail_url?: string;
   permalink: string;
-  timestamp?: string;
+  timestamp: string;
+  like_count?: number | null;
 }
 
 export async function GET() {
@@ -25,12 +26,12 @@ export async function GET() {
     });
   }
 
-  const fields = "id,caption,media_type,media_url,thumbnail_url,permalink,timestamp";
+  const fields = "id,caption,media_type,media_url,thumbnail_url,permalink,timestamp,like_count";
   
   // Try User-ID endpoint first, then fall back to /me/media
   const urls = [
-    `https://graph.instagram.com/v22.0/${userId}/media?fields=${fields}&access_token=${token}&limit=12`,
-    `https://graph.instagram.com/me/media?fields=${fields}&access_token=${token}&limit=12`,
+    `https://graph.instagram.com/v22.0/${userId}/media?fields=${fields}&access_token=${token}&limit=18`,
+    `https://graph.instagram.com/me/media?fields=${fields}&access_token=${token}&limit=18`,
   ];
 
   for (const url of urls) {
@@ -49,7 +50,7 @@ export async function GET() {
       const json = await response.json();
       const rawData = json?.data || [];
 
-      // Format and sanitize media items (never return secret access tokens)
+      // Format and sanitize media items (never return secret access tokens or credentials)
       const data: InstagramMediaItem[] = rawData
         .filter((item: any) => item && item.id && (item.media_url || item.thumbnail_url))
         .map((item: any) => ({
@@ -60,12 +61,13 @@ export async function GET() {
           thumbnail_url: item.thumbnail_url || item.media_url || "",
           permalink: item.permalink || "https://www.instagram.com/gandharvapureveg_latur",
           timestamp: item.timestamp || "",
+          like_count: typeof item.like_count === "number" ? item.like_count : null,
         }));
 
       if (data.length > 0) {
         return NextResponse.json({
           success: true,
-          data: data.slice(0, 12),
+          data: data,
         });
       }
     } catch (err) {
@@ -80,3 +82,4 @@ export async function GET() {
     data: [],
   });
 }
+

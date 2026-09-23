@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Play, Layers, ExternalLink, ArrowRight } from "lucide-react";
+import { Play, Layers, ExternalLink, ArrowRight, Heart } from "lucide-react";
 import type { InstagramMediaItem } from "@/app/api/instagram/route";
 
 const INSTAGRAM_PROFILE_URL = "https://www.instagram.com/gandharvapureveg_latur";
@@ -25,10 +25,34 @@ const InstagramIcon = ({ size = 24, className = "" }: { size?: number; className
   </svg>
 );
 
+function formatInstagramDate(timestampStr?: string): string {
+  if (!timestampStr) return "";
+  const date = new Date(timestampStr);
+  if (isNaN(date.getTime())) return "";
+
+  const now = new Date();
+  const diffTime = Math.abs(now.getTime() - date.getTime());
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+  if (diffDays === 0 && now.getDate() === date.getDate()) {
+    return "Today";
+  }
+  if (diffDays === 1 || (diffDays === 0 && now.getDate() !== date.getDate())) {
+    return "Yesterday";
+  }
+
+  return date.toLocaleDateString("en-IN", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+}
+
 export function InstagramSection() {
   const [posts, setPosts] = useState<InstagramMediaItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(6);
 
   useEffect(() => {
     let isMounted = true;
@@ -38,7 +62,7 @@ export function InstagramSection() {
         const json = await res.json();
         if (isMounted) {
           if (json?.success && Array.isArray(json.data) && json.data.length > 0) {
-            setPosts(json.data.slice(0, 6));
+            setPosts(json.data);
           } else {
             setError(true);
           }
@@ -58,6 +82,8 @@ export function InstagramSection() {
       isMounted = false;
     };
   }, []);
+
+  const displayedPosts = posts.slice(0, visibleCount);
 
   return (
     <section className="py-16 md:py-20 px-4 md:px-8" style={{ backgroundColor: "#F5E9D2" }}>
@@ -106,63 +132,102 @@ export function InstagramSection() {
         )}
 
         {/* Success Grid */}
-        {!loading && !error && posts.length > 0 && (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
-            {posts.map((post) => {
-              const displayUrl = post.media_type === "VIDEO" && post.thumbnail_url ? post.thumbnail_url : post.media_url;
+        {!loading && !error && displayedPosts.length > 0 && (
+          <>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
+              {displayedPosts.map((post) => {
+                const displayUrl = post.media_type === "VIDEO" && post.thumbnail_url ? post.thumbnail_url : post.media_url;
+                const formattedDate = formatInstagramDate(post.timestamp);
 
-              return (
-                <a
-                  key={post.id}
-                  href={post.permalink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group relative w-full aspect-square rounded-md overflow-hidden block shadow-sm border"
-                  style={{ borderColor: "rgba(212, 154, 42, 0.25)", backgroundColor: "#24130A" }}
+                return (
+                  <a
+                    key={post.id}
+                    href={post.permalink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group relative w-full aspect-square rounded-md overflow-hidden block shadow-sm border"
+                    style={{ borderColor: "rgba(212, 154, 42, 0.25)", backgroundColor: "#24130A" }}
+                  >
+                    <Image
+                      src={displayUrl}
+                      alt={post.caption || "Gandharva Hotel Instagram Post"}
+                      fill
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      unoptimized={displayUrl.includes("cdninstagram") || displayUrl.includes("fbcdn")}
+                      onError={(e) => {
+                        e.currentTarget.style.opacity = "0.7";
+                      }}
+                    />
+
+                    {/* Media Type Badges */}
+                    {post.media_type === "VIDEO" && (
+                      <div className="absolute top-2.5 right-2.5 bg-[#24130A]/80 text-[#FFF7E8] p-1.5 rounded-full shadow-md backdrop-blur-xs z-10">
+                        <Play size={14} className="fill-current" />
+                      </div>
+                    )}
+
+                    {post.media_type === "CAROUSEL_ALBUM" && (
+                      <div className="absolute top-2.5 right-2.5 bg-[#24130A]/80 text-[#FFF7E8] p-1.5 rounded-full shadow-md backdrop-blur-xs z-10">
+                        <Layers size={14} />
+                      </div>
+                    )}
+
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-[#24130A]/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-3.5 text-[#FFF7E8] z-20">
+                      <div className="flex items-center justify-between text-xs">
+                        {typeof post.like_count === "number" && post.like_count > 0 ? (
+                          <span className="flex items-center gap-1 text-[#FFF7E8]/90 font-semibold text-[11px]">
+                            <Heart size={13} className="text-[#D49A2A] fill-[#D49A2A]" />
+                            {post.like_count}
+                          </span>
+                        ) : (
+                          <span />
+                        )}
+                        <ExternalLink size={15} className="text-[#D49A2A]" />
+                      </div>
+
+                      <p className="text-[12px] leading-snug line-clamp-2 font-sans opacity-95">
+                        {post.caption || "View on Instagram"}
+                      </p>
+
+                      <div className="flex items-center justify-between text-[11px] font-semibold pt-1 border-t border-[#FFF7E8]/15">
+                        <span className="text-[#FFF7E8]/80 font-sans">{formattedDate}</span>
+                        <span className="text-[#D49A2A] tracking-wider uppercase">
+                          View →
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
+
+            {/* View More Posts Button */}
+            {posts.length > visibleCount && (
+              <div className="text-center mt-8">
+                <button
+                  onClick={() => setVisibleCount((prev) => Math.min(prev + 6, posts.length))}
+                  className="inline-flex items-center gap-2 text-xs md:text-sm font-bold px-6 py-2.5 rounded-full transition-all duration-200 border"
+                  style={{
+                    borderColor: "#A83216",
+                    color: "#A83216",
+                    backgroundColor: "transparent",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = "#A83216";
+                    e.currentTarget.style.color = "#FFF7E8";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                    e.currentTarget.style.color = "#A83216";
+                  }}
                 >
-                  <Image
-                    src={displayUrl}
-                    alt={post.caption || "Gandharva Hotel Instagram Post"}
-                    fill
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    unoptimized={displayUrl.includes("cdninstagram") || displayUrl.includes("fbcdn")}
-                    onError={(e) => {
-                      e.currentTarget.style.opacity = "0.7";
-                    }}
-                  />
-
-                  {/* Media Type Badges */}
-                  {post.media_type === "VIDEO" && (
-                    <div className="absolute top-2.5 right-2.5 bg-[#24130A]/80 text-[#FFF7E8] p-1.5 rounded-full shadow-md backdrop-blur-xs z-10">
-                      <Play size={14} className="fill-current" />
-                    </div>
-                  )}
-
-                  {post.media_type === "CAROUSEL_ALBUM" && (
-                    <div className="absolute top-2.5 right-2.5 bg-[#24130A]/80 text-[#FFF7E8] p-1.5 rounded-full shadow-md backdrop-blur-xs z-10">
-                      <Layers size={14} />
-                    </div>
-                  )}
-
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-[#24130A]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-3.5 text-[#FFF7E8] z-20">
-                    <div className="flex justify-end">
-                      <ExternalLink size={16} className="text-[#D49A2A]" />
-                    </div>
-
-                    <p className="text-[12px] leading-snug line-clamp-3 font-sans opacity-95">
-                      {post.caption || "View on Instagram"}
-                    </p>
-
-                    <span className="text-[11px] font-semibold text-[#D49A2A] tracking-wider uppercase">
-                      View Post →
-                    </span>
-                  </div>
-                </a>
-              );
-            })}
-          </div>
+                  View More Posts ({posts.length - visibleCount} remaining)
+                </button>
+              </div>
+            )}
+          </>
         )}
 
         {/* Graceful Fallback (If API returns empty/error or token unconfigured) */}
@@ -201,3 +266,4 @@ export function InstagramSection() {
     </section>
   );
 }
+
