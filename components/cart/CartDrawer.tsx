@@ -97,8 +97,8 @@ Thank you! Please process my order.`;
         onClick={() => setIsCartOpen(false)}
       />
 
-      <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-[#FFF7E8] text-[#24130A] shadow-2xl flex flex-col relative z-10 border-l border-[#D49A2A]/20">
+      <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
+        <div className="w-full sm:w-screen max-w-md bg-[#FFF7E8] text-[#24130A] shadow-2xl flex flex-col relative z-10 border-l border-[#D49A2A]/20">
           
           {/* Header */}
           <div className="p-5 bg-[#24130A] text-[#FFF7E8] flex items-center justify-between border-b border-[#D49A2A]/30">
@@ -215,7 +215,7 @@ Thank you! Please process my order.`;
                       {/* Remove Button */}
                       <button
                         onClick={() => removeFromCart(item._id)}
-                        className="text-[#24130A]/40 hover:text-[#8F2A12] transition-colors p-1"
+                        className="text-[#24130A]/40 hover:text-[#8F2A12] transition-colors p-1 shrink-0"
                         aria-label="Remove item"
                       >
                         <Trash2 size={16} />
@@ -245,7 +245,7 @@ Thank you! Please process my order.`;
                       placeholder="Enter your name"
                       value={customerDetails.name}
                       onChange={(e) => handleInputChange("name", e.target.value)}
-                      className={`w-full px-3 py-2 text-xs rounded-lg outline-none bg-[#FCF8F3] border transition-colors ${
+                      className={`w-full px-3 py-2 text-base rounded-lg outline-none bg-[#FCF8F3] border transition-colors ${
                         errors.name ? "border-red-500 bg-red-50" : "border-[#D49A2A]/30 focus:border-[#8F2A12]"
                       }`}
                     />
@@ -262,7 +262,7 @@ Thank you! Please process my order.`;
                       placeholder="10-digit mobile number"
                       value={customerDetails.phone}
                       onChange={(e) => handleInputChange("phone", e.target.value)}
-                      className={`w-full px-3 py-2 text-xs rounded-lg outline-none bg-[#FCF8F3] border transition-colors ${
+                      className={`w-full px-3 py-2 text-base rounded-lg outline-none bg-[#FCF8F3] border transition-colors ${
                         errors.phone ? "border-red-500 bg-red-50" : "border-[#D49A2A]/30 focus:border-[#8F2A12]"
                       }`}
                     />
@@ -281,7 +281,7 @@ Thank you! Please process my order.`;
                       placeholder="House/Flat No., Street, Area..."
                       value={customerDetails.address}
                       onChange={(e) => handleInputChange("address", e.target.value)}
-                      className={`w-full px-3 py-2 text-xs rounded-lg outline-none bg-[#FCF8F3] border transition-colors resize-none ${
+                      className={`w-full px-3 py-2 text-base rounded-lg outline-none bg-[#FCF8F3] border transition-colors resize-none ${
                         errors.address ? "border-red-500 bg-red-50" : "border-[#D49A2A]/30 focus:border-[#8F2A12]"
                       }`}
                     />
@@ -298,7 +298,7 @@ Thank you! Please process my order.`;
                       placeholder="Nearby landmark"
                       value={customerDetails.landmark}
                       onChange={(e) => handleInputChange("landmark", e.target.value)}
-                      className="w-full px-3 py-2 text-xs rounded-lg outline-none bg-[#FCF8F3] border border-[#D49A2A]/30 focus:border-[#8F2A12] transition-colors"
+                      className="w-full px-3 py-2 text-base rounded-lg outline-none bg-[#FCF8F3] border border-[#D49A2A]/30 focus:border-[#8F2A12] transition-colors"
                     />
                   </div>
 
@@ -312,7 +312,7 @@ Thank you! Please process my order.`;
                       placeholder="e.g., Less spicy, no onion"
                       value={customerDetails.notes}
                       onChange={(e) => handleInputChange("notes", e.target.value)}
-                      className="w-full px-3 py-2 text-xs rounded-lg outline-none bg-[#FCF8F3] border border-[#D49A2A]/30 focus:border-[#8F2A12] transition-colors"
+                      className="w-full px-3 py-2 text-base rounded-lg outline-none bg-[#FCF8F3] border border-[#D49A2A]/30 focus:border-[#8F2A12] transition-colors"
                     />
                   </div>
                 </div>
