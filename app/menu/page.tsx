@@ -82,7 +82,7 @@ export default function MenuPage() {
   }, [page]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div ref={containerRef as React.Ref<HTMLDivElement>} className="bg-[#F5E9D2] min-h-screen" style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}>
+    <div ref={containerRef as React.Ref<HTMLDivElement>} className="bg-[#F5E9D2] min-h-screen">
 
       {/* 1. Hero Section */}
       <section className="relative w-full h-[60dvh] min-h-[450px] max-h-[600px] flex items-center justify-center text-center overflow-hidden">
@@ -140,7 +140,7 @@ export default function MenuPage() {
             <div className="w-1.5 h-1.5 rotate-45 bg-[#D49A2A]"></div>
             <span className="w-8 h-[1px] bg-[#D49A2A]"></span>
           </div>
-          <p className="text-[#24130A]/70 text-[15px]">{total} items crafted with passion.</p>
+          <p className="text-[#24130A]/80 text-[15px]">{total} items crafted with passion.</p>
         </div>
 
         {/* Filters */}
@@ -150,7 +150,7 @@ export default function MenuPage() {
             <div className="flex gap-2 flex-wrap justify-center sm:justify-start flex-1">
               <button
                 onClick={() => { setSelectedCategory("all"); setPage(1); }}
-                className={`text-[13px] font-medium px-6 py-2 rounded-full transition-all duration-300 ${selectedCategory === "all"
+                className={`text-[14.5px] font-medium px-6 py-2 rounded-full transition-all duration-300 ${selectedCategory === "all"
                   ? "bg-[#8F2A12] text-[#FFF7E8] shadow-md"
                   : "bg-[#EFE8DA] text-[#24130A] hover:bg-[#D49A2A]/20"
                   }`}
@@ -161,7 +161,7 @@ export default function MenuPage() {
                 <button
                   key={cat._id}
                   onClick={() => { setSelectedCategory(cat._id); setPage(1); }}
-                  className={`text-[13px] font-medium px-6 py-2 rounded-full transition-all duration-300 ${selectedCategory === cat._id
+                  className={`text-[14.5px] font-medium px-6 py-2 rounded-full transition-all duration-300 ${selectedCategory === cat._id
                     ? "bg-[#8F2A12] text-[#FFF7E8] shadow-md"
                     : "bg-[#EFE8DA] text-[#24130A] hover:bg-[#D49A2A]/20"
                     }`}
@@ -179,7 +179,7 @@ export default function MenuPage() {
                 placeholder="Search dishes..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 text-[14px] rounded-md outline-none bg-[#EFE8DA] border border-[#24130A]/10 text-[#24130A] focus:border-[#D49A2A] transition-colors shadow-sm"
+                className="w-full pl-10 pr-4 py-2 text-base rounded-md outline-none bg-[#EFE8DA] border border-[#24130A]/10 text-[#24130A] placeholder:text-[#8C7265] focus:border-[#D49A2A] transition-colors shadow-sm"
               />
             </div>
           </div>
@@ -226,14 +226,14 @@ export default function MenuPage() {
 
                       {/* Content */}
                       <div className="p-6 flex flex-col flex-grow">
-                        <h3 className="font-bold text-[1.15rem] text-[#24130A] mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
+                        <h3 className="font-bold text-[1.2rem] text-[#24130A] mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
                           {item.name}
                         </h3>
                         {item.description && (
-                          <p className="text-[13px] text-[#24130A]/75 line-clamp-2 mb-3 leading-relaxed">{item.description}</p>
+                          <p className="text-[14px] text-[#24130A]/80 line-clamp-2 mb-3 leading-relaxed">{item.description}</p>
                         )}
 
-                        <div className="mt-auto pt-4 border-t border-[#D49A2A]/10 flex items-center justify-between gap-3" style={{ fontFamily: "'Inter', sans-serif" }}>
+                        <div className="mt-auto pt-4 border-t border-[#D49A2A]/10 flex items-center justify-between gap-3">
                           <p className="font-bold text-[17px] text-[#8F2A12]">
                             ₹{item.price}
                           </p>
@@ -262,7 +262,7 @@ export default function MenuPage() {
                                 addToCart(item);
                                 toast.success(`Added ${item.name} to cart`);
                               }}
-                              className="flex items-center gap-1.5 bg-[#EFE8DA] hover:bg-[#8F2A12] text-[#8F2A12] hover:text-[#FFF7E8] px-4 py-1.5 rounded-lg text-xs font-bold transition-all border border-[#D49A2A]/30 shadow-sm"
+                              className="flex items-center gap-1.5 bg-[#EFE8DA] hover:bg-[#8F2A12] text-[#8F2A12] hover:text-[#FFF7E8] px-4 py-1.5 rounded-lg text-[13.5px] font-bold transition-all border border-[#D49A2A]/30 shadow-sm cursor-pointer"
                             >
                               <Plus size={14} /> Add
                             </button>

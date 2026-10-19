@@ -66,7 +66,7 @@ export default function ReviewsPage() {
   };
 
   return (
-    <div ref={containerRef as React.Ref<HTMLDivElement>} className="bg-[#F5E9D2] min-h-screen text-[#24130A]" style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}>
+    <div ref={containerRef as React.Ref<HTMLDivElement>} className="bg-[#F5E9D2] min-h-screen text-[#24130A]">
       {/* Hero Section */}
       <section 
         className="relative flex flex-col items-center justify-center py-40 bg-black overflow-hidden"
@@ -83,7 +83,7 @@ export default function ReviewsPage() {
              <span className="uppercase text-[#D49A2A] tracking-[0.2em] text-xs font-semibold">Guest Reviews</span>
              <span className="w-12 h-px bg-[#D49A2A]"></span>
           </div>
-          <h1 className="text-white text-5xl md:text-7xl font-medium mb-8" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+          <h1 className="text-white text-5xl md:text-7xl font-semibold mb-8" style={{ fontFamily: "var(--font-display)" }}>
             What Our Guests Say
           </h1>
           <div className="flex items-center justify-center gap-2">
@@ -103,7 +103,7 @@ export default function ReviewsPage() {
               <span className="uppercase text-[#D49A2A] tracking-[0.15em] text-xs font-bold">Share Your Experience</span>
               <span className="w-8 h-px bg-[#D49A2A]"></span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-medium" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+            <h2 className="text-4xl md:text-5xl font-semibold" style={{ fontFamily: "var(--font-display)" }}>
               Leave a Review
             </h2>
           </div>
@@ -123,7 +123,7 @@ export default function ReviewsPage() {
             ) : (
               <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-6 reveal stagger-2">
                 <div>
-                  <label className="block text-sm font-bold text-[#24130A] mb-3">Your Rating *</label>
+                  <label className="block text-[15px] font-semibold text-[#24130A] mb-3">Your Rating *</label>
                   <div className="flex gap-1.5">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <button
@@ -135,7 +135,7 @@ export default function ReviewsPage() {
                           setSelectedRating(star);
                           setValue("rating", star);
                         }}
-                        className="p-1 transition-transform hover:scale-110"
+                        className="p-1 transition-transform hover:scale-110 cursor-pointer"
                       >
                         <svg width={32} height={32} viewBox="0 0 20 20" fill="none">
                           <path
@@ -154,22 +154,22 @@ export default function ReviewsPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-bold text-[#24130A] mb-2">Your Name *</label>
+                  <label className="block text-[15px] font-semibold text-[#24130A] mb-2">Your Name *</label>
                   <input
                     {...register("customerName")}
                     placeholder="Enter your name"
-                    className="w-full bg-transparent border border-[#e4d5bc] rounded-md px-4 py-3.5 text-sm focus:outline-none focus:border-[#A83216] focus:ring-1 focus:ring-[#A83216] transition-all placeholder:text-[#A38C81]"
+                    className="w-full bg-transparent border border-[#e4d5bc] rounded-md px-4 py-3.5 text-base focus:outline-none focus:border-[#A83216] focus:ring-1 focus:ring-[#A83216] transition-all placeholder:text-[#8C7265] text-[#24130A]"
                   />
                   {errors.customerName && <p className="text-red-500 text-xs mt-1.5 font-medium">{errors.customerName.message}</p>}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-bold text-[#24130A] mb-2">Your Review *</label>
+                  <label className="block text-[15px] font-semibold text-[#24130A] mb-2">Your Review *</label>
                   <textarea
                     {...register("review")}
                     placeholder="Share your experience with us..."
                     rows={6}
-                    className="w-full bg-transparent border border-[#e4d5bc] rounded-md px-4 py-3.5 text-sm focus:outline-none focus:border-[#A83216] focus:ring-1 focus:ring-[#A83216] transition-all resize-none placeholder:text-[#A38C81]"
+                    className="w-full bg-transparent border border-[#e4d5bc] rounded-md px-4 py-3.5 text-base focus:outline-none focus:border-[#A83216] focus:ring-1 focus:ring-[#A83216] transition-all resize-none placeholder:text-[#8C7265] text-[#24130A]"
                   />
                   {errors.review && <p className="text-red-500 text-xs mt-1.5 font-medium">{errors.review.message}</p>}
                 </div>
@@ -179,7 +179,7 @@ export default function ReviewsPage() {
                     type="submit"
                     variant="primary"
                     disabled={submitting}
-                    className="px-10 py-3.5 rounded-md"
+                    className="px-10 py-3.5 rounded-md text-[15px]"
                   >
                     {submitting ? <><Spinner size={16} /> Submitting...</> : "Submit Review"}
                   </Button>
@@ -221,14 +221,14 @@ export default function ReviewsPage() {
                         {initials}
                       </div>
                       <div>
-                        <h3 className="font-bold text-[#24130A] leading-tight">{review.customerName}</h3>
+                        <h3 className="font-bold text-[#24130A] leading-tight text-[16px]">{review.customerName}</h3>
                         <StarRating rating={review.rating} size={14} className="mt-1.5" />
                       </div>
                     </div>
-                    <p className="text-[15px] text-[#3A2016] mb-8 flex-1 leading-relaxed">
+                    <p className="text-[16px] text-[#24130A] mb-8 flex-1 leading-relaxed">
                       {review.review}
                     </p>
-                    <div className="flex items-center gap-2 text-xs text-[#8C7265] font-medium pt-4 border-t border-[#e4d5bc]/50">
+                    <div className="flex items-center gap-2 text-[13px] text-[#7A6357] font-medium pt-4 border-t border-[#e4d5bc]/50">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                         <line x1="16" y1="2" x2="16" y2="6"></line>

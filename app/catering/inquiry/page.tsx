@@ -101,11 +101,11 @@ const SideDecoration = ({ side }: { side: 'left' | 'right' }) => (
 
 const InputField = React.forwardRef(({ label, id, error, ...props }: any, ref) => (
   <div className="flex flex-col gap-2 relative z-20">
-    <label htmlFor={id} className="text-[#24130A] text-sm font-semibold">{label}</label>
+    <label htmlFor={id} className="text-[#24130A] text-[15px] font-semibold">{label}</label>
     <input 
       ref={ref}
       id={id}
-      className={`w-full px-4 py-3 rounded-md border ${error ? 'border-red-500' : 'border-[rgba(36,19,10,0.15)]'} bg-[rgba(255,255,255,0.6)] focus:bg-white focus:outline-none focus:border-[#D49A2A] text-[#24130A] text-sm transition-all shadow-sm`}
+      className={`w-full px-4 py-3 rounded-md border ${error ? 'border-red-500' : 'border-[rgba(36,19,10,0.15)]'} bg-[rgba(255,255,255,0.6)] focus:bg-white focus:outline-none focus:border-[#D49A2A] text-[#24130A] text-base placeholder:text-[#8C7265] transition-all shadow-sm`}
       {...props} 
     />
     {error && <span className="text-red-500 text-xs">{error}</span>}
@@ -115,11 +115,11 @@ InputField.displayName = "InputField";
 
 const TextareaField = React.forwardRef(({ label, id, error, ...props }: any, ref) => (
   <div className="flex flex-col gap-2 h-full relative z-20">
-    <label htmlFor={id} className="text-[#24130A] text-sm font-semibold">{label}</label>
+    <label htmlFor={id} className="text-[#24130A] text-[15px] font-semibold">{label}</label>
     <textarea 
       ref={ref}
       id={id}
-      className={`w-full px-4 py-3 rounded-md border ${error ? 'border-red-500' : 'border-[rgba(36,19,10,0.15)]'} bg-[rgba(255,255,255,0.6)] focus:bg-white focus:outline-none focus:border-[#D49A2A] text-[#24130A] text-sm transition-all resize-none h-[120px] lg:h-full shadow-sm`}
+      className={`w-full px-4 py-3 rounded-md border ${error ? 'border-red-500' : 'border-[rgba(36,19,10,0.15)]'} bg-[rgba(255,255,255,0.6)] focus:bg-white focus:outline-none focus:border-[#D49A2A] text-[#24130A] text-base placeholder:text-[#8C7265] transition-all resize-none h-[120px] lg:h-full shadow-sm`}
       {...props} 
     />
     {error && <span className="text-red-500 text-xs">{error}</span>}
@@ -248,13 +248,13 @@ export default function CateringInquiryPage() {
               <button 
                 type="submit" 
                 disabled={loading} 
-                className="inline-flex items-center gap-2 text-sm font-bold px-10 py-4 rounded-md transition-all hover:bg-[#8F2A12] shadow-sm relative z-20" 
+                className="inline-flex items-center gap-2 text-[15px] font-bold px-10 py-4 rounded-md transition-all hover:bg-[#8F2A12] shadow-sm relative z-20 cursor-pointer" 
                 style={{ backgroundColor: "#A83216", color: "#FFF7E8" }}
               >
                 {loading ? <Spinner size={16} /> : <Send size={16} />}
                 Submit Inquiry
               </button>
-              <p className="mt-4 text-[#24130A] text-sm opacity-80">We will get back to you within 24 hours.</p>
+              <p className="mt-4 text-[#24130A] text-[14px] opacity-85">We will get back to you within 24 hours.</p>
             </div>
             
           </form>
@@ -276,10 +276,10 @@ export default function CateringInquiryPage() {
                         <item.icon size={36} className="text-[#D49A2A]" strokeWidth={1.5} />
                      </div>
                   </div>
-                  <h3 className="text-[#24130A] mb-3 text-[17px] font-bold" style={{ fontFamily: "var(--font-display)" }}>
+                  <h3 className="text-[#24130A] mb-3 text-[18px] font-bold" style={{ fontFamily: "var(--font-display)" }}>
                     {item.title}
                   </h3>
-                  <p className="text-[#24130A] opacity-75 text-[13px] leading-relaxed pr-2">
+                  <p className="text-[#24130A] opacity-80 text-[14px] leading-relaxed pr-2">
                     {item.desc}
                   </p>
                 </div>

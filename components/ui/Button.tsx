@@ -18,9 +18,9 @@ export function Button({
     "relative inline-flex items-center justify-center font-medium tracking-wide transition-all duration-300 cursor-pointer select-none overflow-hidden group";
 
   const sizes: Record<string, string> = {
-    sm: "text-xs px-4 py-2 gap-1.5",
-    md: "text-sm px-6 py-3 gap-2",
-    lg: "text-sm px-8 py-4 gap-2.5",
+    sm: "text-sm px-4 py-2 gap-1.5",
+    md: "text-[15px] px-6 py-3 gap-2",
+    lg: "text-base px-8 py-4 gap-2.5",
   };
 
   const variants: Record<string, string> = {
@@ -65,12 +65,12 @@ export function LinkButton({
   children,
 }: LinkButtonProps) {
   const base =
-    "relative inline-flex items-center justify-center font-medium tracking-wide transition-all duration-300 cursor-pointer select-none overflow-hidden group no-underline";
+    "relative inline-flex items-center justify-center font-medium tracking-wide transition-all duration-300 cursor-pointer select-none overflow-hidden group no-underline font-sans";
 
   const sizes: Record<string, string> = {
-    sm: "text-xs px-4 py-2 gap-1.5",
-    md: "text-sm px-6 py-3 gap-2",
-    lg: "text-sm px-8 py-4 gap-2.5",
+    sm: "text-sm px-4 py-2 gap-1.5",
+    md: "text-[15px] px-6 py-3 gap-2",
+    lg: "text-base px-8 py-4 gap-2.5",
   };
 
   const variants: Record<string, string> = {

@@ -36,7 +36,7 @@ export function Hero() {
         <div className="max-w-[560px]">
           {/* Main Heading */}
           <h1
-            className="mb-0 font-display font-medium text-[36px] md:text-[46px] lg:text-[56px] reveal stagger-1"
+            className="mb-0 font-display font-medium text-[38px] md:text-[48px] lg:text-[56px] reveal stagger-1"
             style={{ color: "#FFF7E8", lineHeight: 1.15, letterSpacing: "0.01em" }}
           >
             मन तृप्त<br />
@@ -51,7 +51,7 @@ export function Hero() {
           </div>
 
           {/* Description */}
-          <p className="max-w-[500px] text-[15px] md:text-[17px] leading-[1.6] mb-0 reveal stagger-3" style={{ color: "rgba(255, 247, 232, 0.9)", marginTop: "30px" }}>
+          <p className="max-w-[500px] text-[16px] md:text-[17.5px] leading-[1.65] mb-0 reveal stagger-3" style={{ color: "rgba(255, 247, 232, 0.95)", marginTop: "28px" }}>
             Pure vegetarian delights crafted with love, authentic recipes and the finest ingredients.
           </p>
 

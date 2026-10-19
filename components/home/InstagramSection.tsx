@@ -92,12 +92,12 @@ export function InstagramSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row items-center justify-between mb-10 gap-4 text-center md:text-left">
           <div>
-            <p className="eyebrow mb-2 font-bold tracking-widest text-xs" style={{ color: "#A83216" }}>
+            <p className="eyebrow mb-2 font-bold tracking-widest text-[13px]" style={{ color: "#A83216" }}>
               FOLLOW US ON INSTAGRAM
             </p>
             <h2
               className="text-[28px] md:text-[36px] font-display font-semibold flex items-center justify-center md:justify-start gap-3"
-              style={{ color: "#24130A", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
+              style={{ color: "#24130A" }}
             >
               <InstagramIcon size={28} className="text-[#A83216] shrink-0" />
               @gandharvapureveg_latur
@@ -109,7 +109,7 @@ export function InstagramSection() {
             href={INSTAGRAM_PROFILE_URL}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 text-xs md:text-sm font-bold px-6 py-3 rounded-md transition-all duration-200 shadow-sm"
+            className="inline-flex items-center gap-2 text-[15px] font-bold px-6 py-3 rounded-md transition-all duration-200 shadow-sm"
             style={{ backgroundColor: "#A83216", color: "#FFF7E8" }}
             onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#8F2A12")}
             onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#A83216")}
@@ -208,7 +208,7 @@ export function InstagramSection() {
               <div className="text-center mt-8">
                 <button
                   onClick={() => setVisibleCount((prev) => Math.min(prev + 6, posts.length))}
-                  className="inline-flex items-center gap-2 text-xs md:text-sm font-bold px-6 py-2.5 rounded-full transition-all duration-200 border"
+                  className="inline-flex items-center gap-2 text-[14px] md:text-[15px] font-bold px-6 py-2.5 rounded-full transition-all duration-200 border"
                   style={{
                     borderColor: "#A83216",
                     color: "#A83216",
@@ -241,18 +241,18 @@ export function InstagramSection() {
             </div>
             <h3
               className="text-2xl font-display font-semibold mb-2"
-              style={{ color: "#24130A", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
+              style={{ color: "#24130A" }}
             >
               Connect With Us On Instagram
             </h3>
-            <p className="text-sm max-w-md mb-6" style={{ color: "rgba(36, 19, 10, 0.75)" }}>
+            <p className="text-[15px] max-w-md mb-6 leading-relaxed" style={{ color: "rgba(36, 19, 10, 0.82)" }}>
               Follow <strong style={{ color: "#A83216" }}>@gandharvapureveg_latur</strong> for daily pure veg menu updates, special offers, customer reviews &amp; event highlights.
             </p>
             <a
               href={INSTAGRAM_PROFILE_URL}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-bold px-8 py-3.5 rounded-md transition-all shadow-md"
+              className="inline-flex items-center gap-2 text-[15px] font-bold px-8 py-3.5 rounded-md transition-all shadow-md"
               style={{ backgroundColor: "#A83216", color: "#FFF7E8" }}
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#8F2A12")}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#A83216")}

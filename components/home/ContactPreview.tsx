@@ -26,7 +26,7 @@ export function ContactPreview() {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold mb-1" style={{ color: "#24130A" }}>Location</h4>
-                  <p className="text-base" style={{ color: "rgba(36, 19, 10, 0.7)" }}>
+                  <p className="text-base leading-relaxed" style={{ color: "rgba(36, 19, 10, 0.88)" }}>
                     Ausa Road, Near Rajiv Gandhi Chowk,<br />Latur, Maharashtra 413512
                   </p>
                 </div>
@@ -38,7 +38,7 @@ export function ContactPreview() {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold mb-1" style={{ color: "#24130A" }}>Phone</h4>
-                  <p className="text-base" style={{ color: "rgba(36, 19, 10, 0.7)" }}>+91 91681 63999</p>
+                  <p className="text-base" style={{ color: "rgba(36, 19, 10, 0.88)" }}>+91 91681 63999</p>
                 </div>
               </div>
 
@@ -48,7 +48,7 @@ export function ContactPreview() {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold mb-1" style={{ color: "#24130A" }}>Email</h4>
-                  <p className="text-base" style={{ color: "rgba(36, 19, 10, 0.7)" }}>hotelgandharvalatur@gmail.com</p>
+                  <p className="text-base" style={{ color: "rgba(36, 19, 10, 0.88)" }}>hotelgandharvalatur@gmail.com</p>
                 </div>
               </div>
 
@@ -58,7 +58,7 @@ export function ContactPreview() {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold mb-1" style={{ color: "#24130A" }}>Hours</h4>
-                  <p className="text-base" style={{ color: "rgba(36, 19, 10, 0.7)" }}>Open Daily: 11:00 AM - 11:00 PM</p>
+                  <p className="text-base" style={{ color: "rgba(36, 19, 10, 0.88)" }}>Open Daily: 11:00 AM - 11:00 PM</p>
                 </div>
               </div>
             </div>
@@ -68,7 +68,7 @@ export function ContactPreview() {
                 href="https://maps.google.com/?q=Gandharva+Hotel+Latur"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center text-sm font-bold px-8 py-4 rounded-sm transition-all duration-200"
+                className="inline-flex items-center text-[15px] font-bold px-8 py-4 rounded-sm transition-all duration-200"
                 style={{ backgroundColor: "#A83216", color: "#FFF7E8" }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#8F2A12")}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#A83216")}
@@ -77,7 +77,7 @@ export function ContactPreview() {
               </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center text-sm font-bold px-8 py-4 rounded-sm transition-all duration-200"
+                className="inline-flex items-center text-[15px] font-bold px-8 py-4 rounded-sm transition-all duration-200"
                 style={{ border: "2px solid #D49A2A", color: "#D49A2A" }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(212, 154, 42, 0.1)")}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}

@@ -62,63 +62,63 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-5">
       <div>
-        <label className="block text-sm font-bold text-[#24130A] mb-2">Your Name <span className="text-[#A83216]">*</span></label>
+        <label className="block text-[15px] font-semibold text-[#24130A] mb-2">Your Name <span className="text-[#A83216]">*</span></label>
         <input
           {...register("customerName")}
           placeholder="Enter your name"
-          className="w-full bg-transparent border border-[#D49A2A]/30 rounded-md px-4 py-3.5 text-sm focus:outline-none focus:border-[#A83216] focus:ring-1 focus:ring-[#A83216] transition-all placeholder:text-[#A38C81] text-[#24130A]"
+          className="w-full bg-transparent border border-[#D49A2A]/30 rounded-md px-4 py-3.5 text-base focus:outline-none focus:border-[#A83216] focus:ring-1 focus:ring-[#A83216] transition-all placeholder:text-[#8C7265] text-[#24130A]"
         />
-        {errors.customerName && <p className="text-red-500 text-xs mt-1.5 font-medium">{errors.customerName.message}</p>}
+        {errors.customerName && <p className="text-red-600 text-[13px] mt-1.5 font-medium">{errors.customerName.message}</p>}
       </div>
 
       <div>
-        <label className="block text-sm font-bold text-[#24130A] mb-2">Email Address <span className="text-[#A83216]">*</span></label>
+        <label className="block text-[15px] font-semibold text-[#24130A] mb-2">Email Address <span className="text-[#A83216]">*</span></label>
         <input
           type="email"
           {...register("email")}
           placeholder="Enter your email"
-          className="w-full bg-transparent border border-[#D49A2A]/30 rounded-md px-4 py-3.5 text-sm focus:outline-none focus:border-[#A83216] focus:ring-1 focus:ring-[#A83216] transition-all placeholder:text-[#A38C81] text-[#24130A]"
+          className="w-full bg-transparent border border-[#D49A2A]/30 rounded-md px-4 py-3.5 text-base focus:outline-none focus:border-[#A83216] focus:ring-1 focus:ring-[#A83216] transition-all placeholder:text-[#8C7265] text-[#24130A]"
         />
-        {errors.email && <p className="text-red-500 text-xs mt-1.5 font-medium">{errors.email.message}</p>}
+        {errors.email && <p className="text-red-600 text-[13px] mt-1.5 font-medium">{errors.email.message}</p>}
       </div>
 
       <div>
-        <label className="block text-sm font-bold text-[#24130A] mb-2">Phone (optional)</label>
+        <label className="block text-[15px] font-semibold text-[#24130A] mb-2">Phone (optional)</label>
         <input
           type="tel"
           {...register("phone")}
           placeholder="Enter your phone number"
-          className="w-full bg-transparent border border-[#D49A2A]/30 rounded-md px-4 py-3.5 text-sm focus:outline-none focus:border-[#A83216] focus:ring-1 focus:ring-[#A83216] transition-all placeholder:text-[#A38C81] text-[#24130A]"
+          className="w-full bg-transparent border border-[#D49A2A]/30 rounded-md px-4 py-3.5 text-base focus:outline-none focus:border-[#A83216] focus:ring-1 focus:ring-[#A83216] transition-all placeholder:text-[#8C7265] text-[#24130A]"
         />
-        {errors.phone && <p className="text-red-500 text-xs mt-1.5 font-medium">{errors.phone.message}</p>}
+        {errors.phone && <p className="text-red-600 text-[13px] mt-1.5 font-medium">{errors.phone.message}</p>}
       </div>
 
       <div>
-        <label className="block text-sm font-bold text-[#24130A] mb-2">Subject <span className="text-[#A83216]">*</span></label>
+        <label className="block text-[15px] font-semibold text-[#24130A] mb-2">Subject <span className="text-[#A83216]">*</span></label>
         <input
           {...register("subject")}
           placeholder="Enter subject"
-          className="w-full bg-transparent border border-[#D49A2A]/30 rounded-md px-4 py-3.5 text-sm focus:outline-none focus:border-[#A83216] focus:ring-1 focus:ring-[#A83216] transition-all placeholder:text-[#A38C81] text-[#24130A]"
+          className="w-full bg-transparent border border-[#D49A2A]/30 rounded-md px-4 py-3.5 text-base focus:outline-none focus:border-[#A83216] focus:ring-1 focus:ring-[#A83216] transition-all placeholder:text-[#8C7265] text-[#24130A]"
         />
-        {errors.subject && <p className="text-red-500 text-xs mt-1.5 font-medium">{errors.subject.message}</p>}
+        {errors.subject && <p className="text-red-600 text-[13px] mt-1.5 font-medium">{errors.subject.message}</p>}
       </div>
 
       <div>
-        <label className="block text-sm font-bold text-[#24130A] mb-2">Your Message <span className="text-[#A83216]">*</span></label>
+        <label className="block text-[15px] font-semibold text-[#24130A] mb-2">Your Message <span className="text-[#A83216]">*</span></label>
         <textarea
           {...register("message")}
           placeholder="Type your message here..."
           rows={6}
-          className="w-full bg-transparent border border-[#D49A2A]/30 rounded-md px-4 py-3.5 text-sm focus:outline-none focus:border-[#A83216] focus:ring-1 focus:ring-[#A83216] transition-all resize-none placeholder:text-[#A38C81] text-[#24130A]"
+          className="w-full bg-transparent border border-[#D49A2A]/30 rounded-md px-4 py-3.5 text-base focus:outline-none focus:border-[#A83216] focus:ring-1 focus:ring-[#A83216] transition-all resize-none placeholder:text-[#8C7265] text-[#24130A]"
         />
-        {errors.message && <p className="text-red-500 text-xs mt-1.5 font-medium">{errors.message.message}</p>}
+        {errors.message && <p className="text-red-600 text-[13px] mt-1.5 font-medium">{errors.message.message}</p>}
       </div>
 
       <div className="mt-2 text-center">
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-[#A83216] hover:bg-[#8F2A12] text-[#FFF7E8] font-medium py-4 rounded-md transition-all duration-300 flex items-center justify-center gap-2 shadow-sm disabled:opacity-70 disabled:cursor-not-allowed"
+          className="w-full bg-[#A83216] hover:bg-[#8F2A12] text-[#FFF7E8] font-semibold text-base py-4 rounded-md transition-all duration-300 flex items-center justify-center gap-2 shadow-sm disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
         >
           {loading ? (
             <><Spinner size={18} /> Sending...</>
@@ -126,8 +126,8 @@ export function ContactForm() {
             <><Send size={18} /> Send Message</>
           )}
         </button>
-        <div className="flex items-center justify-center gap-2 mt-4 text-[#8C7265] text-xs font-medium">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        <div className="flex items-center justify-center gap-2 mt-4 text-[#7A6357] text-[13px] font-medium">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
           We respect your privacy and never share your information.
         </div>
       </div>

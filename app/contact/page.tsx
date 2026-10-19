@@ -22,7 +22,7 @@ export default async function ContactPage() {
   return (
     <>
       <HomeScrollAnimations />
-      <main className="bg-[#F5E9D2] min-h-screen text-[#24130A] font-sans" style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}>
+      <main className="bg-[#F5E9D2] min-h-screen text-[#24130A] font-sans">
         
         {/* Hero Section */}
         <section className="relative w-full h-[70dvh] min-h-[500px] flex items-center justify-center text-center overflow-hidden">
@@ -80,8 +80,8 @@ export default async function ContactPage() {
                     <MapPin size={24} />
                   </div>
                   <div>
-                    <h3 className="text-[17px] font-bold text-[#8F2A12] mb-1.5" style={{ fontFamily: "var(--font-display)" }}>Address</h3>
-                    <p className="text-[14px] text-[#24130A] leading-relaxed">
+                    <h3 className="text-[18px] font-bold text-[#8F2A12] mb-1.5" style={{ fontFamily: "var(--font-display)" }}>Address</h3>
+                    <p className="text-[15.5px] text-[#24130A] leading-relaxed">
                       Hotel Gandharva<br />
                       Near Bus Stand, Jalgaon,<br />
                       Maharashtra 425001
@@ -95,11 +95,11 @@ export default async function ContactPage() {
                     <Mail size={24} />
                   </div>
                   <div>
-                    <h3 className="text-[17px] font-bold text-[#8F2A12] mb-1.5" style={{ fontFamily: "var(--font-display)" }}>Email</h3>
-                    <a href={`mailto:${contact?.email || 'info@gandharvahotel.com'}`} className="text-[14px] text-[#24130A] hover:text-[#A83216] transition-colors leading-relaxed block">
+                    <h3 className="text-[18px] font-bold text-[#8F2A12] mb-1.5" style={{ fontFamily: "var(--font-display)" }}>Email</h3>
+                    <a href={`mailto:${contact?.email || 'info@gandharvahotel.com'}`} className="text-[15.5px] text-[#24130A] hover:text-[#A83216] transition-colors leading-relaxed block">
                       {contact?.email || 'info@gandharvahotel.com'}
                     </a>
-                    <a href={`mailto:${(contact as any)?.bookingsEmail || 'bookings@gandharvahotel.com'}`} className="text-[14px] text-[#24130A] hover:text-[#A83216] transition-colors leading-relaxed block mt-0.5">
+                    <a href={`mailto:${(contact as any)?.bookingsEmail || 'bookings@gandharvahotel.com'}`} className="text-[15.5px] text-[#24130A] hover:text-[#A83216] transition-colors leading-relaxed block mt-0.5">
                       {(contact as any)?.bookingsEmail || 'bookings@gandharvahotel.com'}
                     </a>
                   </div>
@@ -111,8 +111,8 @@ export default async function ContactPage() {
                     <Clock size={24} />
                   </div>
                   <div>
-                    <h3 className="text-[17px] font-bold text-[#8F2A12] mb-1.5" style={{ fontFamily: "var(--font-display)" }}>Opening Hours</h3>
-                    <p className="text-[14px] text-[#24130A] leading-relaxed whitespace-pre-line">
+                    <h3 className="text-[18px] font-bold text-[#8F2A12] mb-1.5" style={{ fontFamily: "var(--font-display)" }}>Opening Hours</h3>
+                    <p className="text-[15.5px] text-[#24130A] leading-relaxed whitespace-pre-line">
                       {openingHours}
                     </p>
                   </div>
@@ -125,7 +125,7 @@ export default async function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-[1.3rem] font-bold text-[#FFF7E8] mb-2" style={{ fontFamily: "var(--font-display)" }}>Need Immediate Assistance?</h3>
-                    <p className="text-[14px] text-[#FFF7E8]/90 mb-5">Call us directly for quick help.</p>
+                    <p className="text-[15px] text-[#FFF7E8]/90 mb-5">Call us directly for quick help.</p>
                     <a href="tel:+919168163999" className="inline-flex items-center gap-2 border border-[#D49A2A] rounded-md px-5 py-2.5 bg-transparent hover:bg-[#D49A2A] hover:text-[#24130A] text-[#D49A2A] transition-all font-semibold tracking-wide text-[15px]">
                       <Phone size={16} />
                       +91 91681 63999
@@ -171,8 +171,8 @@ export default async function ContactPage() {
                     <Car size={24} />
                   </div>
                   <div>
-                    <h4 className="text-[17px] font-bold text-[#24130A] mb-1.5">Convenient Location</h4>
-                    <p className="text-[14px] text-[#3A2016]/80 leading-relaxed">
+                    <h4 className="text-[18px] font-bold text-[#24130A] mb-1.5">Convenient Location</h4>
+                    <p className="text-[15.5px] text-[#3A2016]/90 leading-relaxed">
                       Located near Jalgaon Bus Stand, easily accessible.
                     </p>
                   </div>
@@ -183,8 +183,8 @@ export default async function ContactPage() {
                     P
                   </div>
                   <div>
-                    <h4 className="text-[17px] font-bold text-[#24130A] mb-1.5">Parking Available</h4>
-                    <p className="text-[14px] text-[#3A2016]/80 leading-relaxed">
+                    <h4 className="text-[18px] font-bold text-[#24130A] mb-1.5">Parking Available</h4>
+                    <p className="text-[15.5px] text-[#3A2016]/90 leading-relaxed">
                       Spacious parking space available for cars and two-wheelers.
                     </p>
                   </div>
@@ -195,8 +195,8 @@ export default async function ContactPage() {
                     <Users size={24} />
                   </div>
                   <div>
-                    <h4 className="text-[17px] font-bold text-[#24130A] mb-1.5">Perfect for All</h4>
-                    <p className="text-[14px] text-[#3A2016]/80 leading-relaxed">
+                    <h4 className="text-[18px] font-bold text-[#24130A] mb-1.5">Perfect for All</h4>
+                    <p className="text-[15.5px] text-[#3A2016]/90 leading-relaxed">
                       Ideal for family dinners, gatherings, and special occasions.
                     </p>
                   </div>

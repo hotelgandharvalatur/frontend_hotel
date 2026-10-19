@@ -90,7 +90,7 @@ Thank you! Please process my order.`;
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden" style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}>
+    <div className="fixed inset-0 z-50 overflow-hidden font-sans">
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-[#24130A]/70 backdrop-blur-sm transition-opacity animate-in fade-in duration-300"
@@ -110,7 +110,7 @@ Thank you! Please process my order.`;
                 <h2 className="text-xl font-bold tracking-wide" style={{ fontFamily: "var(--font-display)" }}>
                   Your Cart
                 </h2>
-                <p className="text-xs text-[#FFF7E8]/70" style={{ fontFamily: "'Inter', sans-serif" }}>
+                <p className="text-xs text-[#FFF7E8]/70">
                   {totalItems} {totalItems === 1 ? "item" : "items"} selected
                 </p>
               </div>
@@ -237,8 +237,8 @@ Thank you! Please process my order.`;
                 <div className="space-y-3">
                   {/* Full Name */}
                   <div>
-                    <label className="block text-xs font-semibold text-[#24130A] mb-1 flex items-center gap-1">
-                      <User size={12} /> Full Name <span className="text-[#8F2A12]">*</span>
+                    <label className="block text-[14px] md:text-[15px] font-semibold text-[#24130A] mb-1 flex items-center gap-1.5">
+                      <User size={14} className="text-[#8F2A12]" /> Full Name <span className="text-[#8F2A12]">*</span>
                     </label>
                     <input
                       type="text"
@@ -249,13 +249,13 @@ Thank you! Please process my order.`;
                         errors.name ? "border-red-500 bg-red-50" : "border-[#D49A2A]/30 focus:border-[#8F2A12]"
                       }`}
                     />
-                    {errors.name && <p className="text-[10px] text-red-500 mt-0.5">Name is required</p>}
+                    {errors.name && <p className="text-[12px] text-red-500 mt-0.5">Name is required</p>}
                   </div>
 
                   {/* Phone Number */}
                   <div>
-                    <label className="block text-xs font-semibold text-[#24130A] mb-1 flex items-center gap-1">
-                      <Phone size={12} /> Phone Number <span className="text-[#8F2A12]">*</span>
+                    <label className="block text-[14px] md:text-[15px] font-semibold text-[#24130A] mb-1 flex items-center gap-1.5">
+                      <Phone size={14} className="text-[#8F2A12]" /> Phone Number <span className="text-[#8F2A12]">*</span>
                     </label>
                     <input
                       type="tel"
@@ -267,14 +267,14 @@ Thank you! Please process my order.`;
                       }`}
                     />
                     {errors.phone && (
-                      <p className="text-[10px] text-red-500 mt-0.5">Valid 10-digit phone number is required</p>
+                      <p className="text-[12px] text-red-500 mt-0.5">Valid 10-digit phone number is required</p>
                     )}
                   </div>
 
                   {/* Delivery Address */}
                   <div>
-                    <label className="block text-xs font-semibold text-[#24130A] mb-1 flex items-center gap-1">
-                      <MapPin size={12} /> Complete Delivery Address <span className="text-[#8F2A12]">*</span>
+                    <label className="block text-[14px] md:text-[15px] font-semibold text-[#24130A] mb-1 flex items-center gap-1.5">
+                      <MapPin size={14} className="text-[#8F2A12]" /> Complete Delivery Address <span className="text-[#8F2A12]">*</span>
                     </label>
                     <textarea
                       rows={2}
@@ -285,13 +285,13 @@ Thank you! Please process my order.`;
                         errors.address ? "border-red-500 bg-red-50" : "border-[#D49A2A]/30 focus:border-[#8F2A12]"
                       }`}
                     />
-                    {errors.address && <p className="text-[10px] text-red-500 mt-0.5">Address is required</p>}
+                    {errors.address && <p className="text-[12px] text-red-500 mt-0.5">Address is required</p>}
                   </div>
 
                   {/* Landmark */}
                   <div>
-                    <label className="block text-xs font-semibold text-[#24130A] mb-1">
-                      Landmark / Pincode <span className="text-[#24130A]/50 font-normal">(Optional)</span>
+                    <label className="block text-[14px] md:text-[15px] font-semibold text-[#24130A] mb-1">
+                      Landmark / Pincode <span className="text-[#24130A]/60 font-normal text-xs">(Optional)</span>
                     </label>
                     <input
                       type="text"
@@ -304,8 +304,8 @@ Thank you! Please process my order.`;
 
                   {/* Cooking/Delivery Notes */}
                   <div>
-                    <label className="block text-xs font-semibold text-[#24130A] mb-1 flex items-center gap-1">
-                      <FileText size={12} /> Special Cooking / Delivery Instructions <span className="text-[#24130A]/50 font-normal">(Optional)</span>
+                    <label className="block text-[14px] md:text-[15px] font-semibold text-[#24130A] mb-1 flex items-center gap-1.5">
+                      <FileText size={14} className="text-[#8F2A12]" /> Special Cooking / Delivery Instructions <span className="text-[#24130A]/60 font-normal text-xs">(Optional)</span>
                     </label>
                     <input
                       type="text"
@@ -323,19 +323,19 @@ Thank you! Please process my order.`;
 
           {/* Footer / Total & Order Button */}
           {cartItems.length > 0 && (
-            <div className="p-5 bg-[#24130A] text-[#FFF7E8] border-t border-[#D49A2A]/30 space-y-4" style={{ fontFamily: "'Inter', sans-serif" }}>
+            <div className="p-5 bg-[#24130A] text-[#FFF7E8] border-t border-[#D49A2A]/30 space-y-4">
               <div className="space-y-1.5 text-xs">
-                <div className="flex justify-between text-[#FFF7E8]/80">
+                <div className="flex justify-between text-[#FFF7E8]/80 text-[13px]">
                   <span>Subtotal ({totalItems} items)</span>
                   <span>₹{subtotal}</span>
                 </div>
-                <div className="flex justify-between text-[#FFF7E8]/80">
+                <div className="flex justify-between text-[#FFF7E8]/80 text-[13px]">
                   <span>Delivery Charge</span>
                   <span className="text-[#D49A2A] font-semibold">Free Delivery</span>
                 </div>
                 <div className="pt-2 border-t border-[#FFF7E8]/10 flex justify-between items-center">
                   <span className="font-bold text-sm text-[#FFF7E8]">Total Payable</span>
-                  <span className="font-bold text-xl text-[#D49A2A]" style={{ fontFamily: "var(--font-cormorant), serif" }}>
+                  <span className="font-bold text-xl text-[#D49A2A]" style={{ fontFamily: "var(--font-display)" }}>
                     ₹{subtotal}
                   </span>
                 </div>
@@ -343,7 +343,7 @@ Thank you! Please process my order.`;
 
               <button
                 onClick={handlePlaceOrder}
-                className="w-full py-3.5 px-4 bg-[#25D366] hover:bg-[#1ebc57] text-white font-bold rounded-xl shadow-lg transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2 text.sm"
+                className="w-full py-3.5 px-4 bg-[#25D366] hover:bg-[#1ebc57] text-white font-bold rounded-xl shadow-lg transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2 text-base cursor-pointer"
               >
                 <Send size={18} /> Order via WhatsApp
               </button>

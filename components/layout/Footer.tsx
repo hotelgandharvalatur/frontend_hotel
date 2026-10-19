@@ -22,14 +22,14 @@ export function Footer() {
                 className="object-contain object-left"
               />
             </Link>
-            <p className="text-sm leading-relaxed" style={{ color: "rgba(255, 247, 232, 0.8)" }}>
+            <p className="text-[15px] leading-relaxed" style={{ color: "rgba(255, 247, 232, 0.88)" }}>
               Experience the taste of tradition with pure vegetarian delicacies and warm hospitality.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-bold tracking-widest uppercase mb-6" style={{ color: "#D49A2A" }}>
+            <h4 className="text-[14px] font-bold tracking-widest uppercase mb-6" style={{ color: "#D49A2A" }}>
               Quick Links
             </h4>
             <ul className="space-y-3">
@@ -45,8 +45,8 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm transition-colors hover:text-white"
-                    style={{ color: "rgba(255, 247, 232, 0.8)" }}
+                    className="text-[15px] transition-colors hover:text-white"
+                    style={{ color: "rgba(255, 247, 232, 0.85)" }}
                   >
                     {link.label}
                   </Link>
@@ -57,31 +57,31 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-sm font-bold tracking-widest uppercase mb-6" style={{ color: "#D49A2A" }}>
+            <h4 className="text-[14px] font-bold tracking-widest uppercase mb-6" style={{ color: "#D49A2A" }}>
               Contact Us
             </h4>
             <ul className="space-y-4">
               <li className="flex gap-3">
                 <MapPin size={18} className="shrink-0 mt-0.5" style={{ color: "#D49A2A" }} />
-                <span className="text-sm" style={{ color: "rgba(255, 247, 232, 0.8)" }}>
+                <span className="text-[15px]" style={{ color: "rgba(255, 247, 232, 0.85)" }}>
                   Ausa Road, Near Rajiv Gandhi Chowk,<br />Latur, Maharashtra 413512
                 </span>
               </li>
               <li className="flex gap-3">
                 <Phone size={18} className="shrink-0 mt-0.5" style={{ color: "#D49A2A" }} />
-                <a href="tel:+919168163999" className="text-sm hover:text-white transition-colors" style={{ color: "rgba(255, 247, 232, 0.8)" }}>
+                <a href="tel:+919168163999" className="text-[15px] hover:text-white transition-colors" style={{ color: "rgba(255, 247, 232, 0.85)" }}>
                   +91 91681 63999
                 </a>
               </li>
               <li className="flex gap-3">
                 <Mail size={18} className="shrink-0 mt-0.5" style={{ color: "#D49A2A" }} />
-                <a href="mailto:hotelgandharvalatur@gmail.com" className="text-sm hover:text-white transition-colors" style={{ color: "rgba(255, 247, 232, 0.8)" }}>
+                <a href="mailto:hotelgandharvalatur@gmail.com" className="text-[15px] hover:text-white transition-colors" style={{ color: "rgba(255, 247, 232, 0.85)" }}>
                   hotelgandharvalatur@gmail.com
                 </a>
               </li>
               <li className="flex gap-3">
                 <Clock size={18} className="shrink-0 mt-0.5" style={{ color: "#D49A2A" }} />
-                <span className="text-sm" style={{ color: "rgba(255, 247, 232, 0.8)" }}>
+                <span className="text-[15px]" style={{ color: "rgba(255, 247, 232, 0.85)" }}>
                   Open Daily: 11:00 AM - 11:00 PM
                 </span>
               </li>
@@ -90,7 +90,7 @@ export function Footer() {
 
           {/* Follow Us */}
           <div>
-            <h4 className="text-sm font-bold tracking-widest uppercase mb-6" style={{ color: "#D49A2A" }}>
+            <h4 className="text-[14px] font-bold tracking-widest uppercase mb-6" style={{ color: "#D49A2A" }}>
               Follow Us
             </h4>
             <div className="flex items-center gap-4">
@@ -120,7 +120,7 @@ export function Footer() {
         </div>
 
         {/* Copyright & Credit */}
-        <div className="mt-16 pt-6 flex flex-col md:flex-row items-center justify-between text-xs gap-3" style={{ borderTop: "1px solid rgba(255, 247, 232, 0.1)", color: "rgba(255, 247, 232, 0.5)" }}>
+        <div className="mt-16 pt-6 flex flex-col md:flex-row items-center justify-between text-[13px] gap-3" style={{ borderTop: "1px solid rgba(255, 247, 232, 0.1)", color: "rgba(255, 247, 232, 0.65)" }}>
           <p>© {new Date().getFullYear()} Gandharva Hotel. All rights reserved.</p>
           <p className="text-center">Designed &amp; developed by BeeCreativess</p>
           <div className="flex gap-4">

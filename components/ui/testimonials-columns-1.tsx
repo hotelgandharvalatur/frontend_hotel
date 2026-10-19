@@ -36,9 +36,9 @@ export const TestimonialsColumn = (props: {
               >
                 <p
                   className="italic leading-relaxed"
-                  style={{ color: "rgba(36, 19, 10, 0.8)", fontSize: "0.9rem" }}
+                  style={{ color: "rgba(36, 19, 10, 0.88)", fontSize: "1rem" }}
                 >
-                  "{text}"
+                  &ldquo;{text}&rdquo;
                 </p>
                 <div className="flex items-center gap-3 mt-5">
                   <div
@@ -48,10 +48,10 @@ export const TestimonialsColumn = (props: {
                     {name.charAt(0)}
                   </div>
                   <div className="flex flex-col">
-                    <div className="font-bold tracking-tight leading-5" style={{ color: "#24130A" }}>
+                    <div className="font-bold text-[15px] tracking-tight leading-5" style={{ color: "#24130A" }}>
                       {name}
                     </div>
-                    <div className="leading-5 text-xs" style={{ color: "rgba(36, 19, 10, 0.5)" }}>
+                    <div className="leading-5 text-[14px]" style={{ color: "rgba(36, 19, 10, 0.65)" }}>
                       {role}
                     </div>
                   </div>

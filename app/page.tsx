@@ -20,7 +20,7 @@ export default function HomePage() {
   return (
     <>
       <HomeScrollAnimations />
-      <div style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}>
+      <div>
         <Hero />
         <AboutPreview />
         <MenuHighlights />

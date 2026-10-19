@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond } from "next/font/google";
+import { Lora, Inter } from "next/font/google";
 import { Toaster } from "sonner";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
@@ -8,10 +8,17 @@ import { CartDrawer } from "@/components/cart/CartDrawer";
 import { CartFloatingButton } from "@/components/cart/CartFloatingButton";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+const lora = Lora({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-cormorant",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-lora",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -40,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${cormorant.variable} h-full`}>
+    <html lang="en" className={`${lora.variable} ${inter.variable} h-full`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

@@ -97,7 +97,7 @@ export default async function CateringPage() {
   const packages = await cateringService.listPackages();
 
   return (
-    <div style={{ backgroundColor: "#FFF7E8", color: "#24130A", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }} className="min-h-screen">
+    <div style={{ backgroundColor: "#FFF7E8", color: "#24130A" }} className="min-h-screen">
       <HomeScrollAnimations />
 
       {/* Hero Section */}
@@ -116,14 +116,14 @@ export default async function CateringPage() {
 
           <Divider className="mb-8 reveal stagger-2" />
 
-          <p className="body-lg mt-4 max-w-xl mx-auto reveal stagger-3 text-[#24130A] opacity-80">
+          <p className="body-lg mt-4 max-w-xl mx-auto reveal stagger-3 text-[#24130A] opacity-90">
             From intimate dinners to grand banquets,<br />our catering team delivers exceptional cuisine<br />wherever you celebrate.
           </p>
 
           <div className="mt-10 reveal stagger-4">
             <Link
               href="/catering/inquiry"
-              className="inline-flex items-center gap-2 text-sm font-bold px-8 py-4 rounded-sm transition-all hover:bg-[#8F2A12]"
+              className="inline-flex items-center gap-2 text-[15px] font-bold px-8 py-4 rounded-sm transition-all hover:bg-[#8F2A12]"
               style={{ backgroundColor: "#5A1807", color: "#FFF7E8", borderRadius: "8px" }}
             >
               <FileText size={18} />
@@ -188,9 +188,9 @@ export default async function CateringPage() {
 
                   <div className="p-8 text-left bg-white bg-opacity-40">
                     <p className="text-[#8F2A12] text-xs font-bold tracking-widest mb-3 uppercase">0{i + 1}</p>
-                    <h3 className="text-3xl mb-4 text-[#24130A]" style={{ fontFamily: "var(--font-display)" }}>{pkg.name}</h3>
+                    <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-[#24130A]" style={{ fontFamily: "var(--font-display)" }}>{pkg.name}</h3>
                     {pkg.description && (
-                      <p className="mb-6 text-[#24130A] opacity-75 leading-relaxed">{pkg.description}</p>
+                      <p className="mb-6 text-[#24130A] opacity-85 text-[15.5px] leading-relaxed">{pkg.description}</p>
                     )}
                     {pkg.pricePerPlate && (
                       <p className="font-bold text-lg mb-8 text-[#D49A2A]">
@@ -199,7 +199,7 @@ export default async function CateringPage() {
                     )}
                     <Link
                       href="/catering/inquiry"
-                      className="inline-block text-sm font-bold px-6 py-3 rounded-sm transition-all text-[#8F2A12] hover:bg-[#8F2A12] hover:text-white"
+                      className="inline-block text-[15px] font-bold px-6 py-3 rounded-sm transition-all text-[#8F2A12] hover:bg-[#8F2A12] hover:text-white"
                       style={{ border: "1px solid #8F2A12" }}
                     >
                       Inquire Now

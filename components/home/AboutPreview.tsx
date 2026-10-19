@@ -36,15 +36,15 @@ export function AboutPreview() {
           <p className="mb-3 font-bold tracking-widest text-xs reveal" style={{ color: "#A83216" }}>
             ABOUT US
           </p>
-          <h2 className="text-[28px] lg:text-[32px] font-display font-semibold leading-[1.25] mb-4 reveal stagger-1" style={{ color: "#24130A", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}>
+          <h2 className="text-[30px] lg:text-[34px] font-display font-semibold leading-[1.25] mb-4 reveal stagger-1" style={{ color: "#24130A" }}>
             A Tradition of Taste and Togetherness
           </h2>
           <div className="w-14 h-[3px] mb-5 reveal stagger-2" style={{ backgroundColor: "#D49A2A" }} />
-          <p className="text-[14px] leading-[1.7] mb-6 reveal stagger-3" style={{ color: "rgba(36, 19, 10, 0.7)" }}>
+          <p className="text-[16px] leading-[1.7] mb-6 reveal stagger-3" style={{ color: "rgba(36, 19, 10, 0.85)" }}>
             Gandharva Hotel is a pure veg restaurant in Latur serving authentic Maharashtrian, North Indian,
             Chinese and South Indian cuisines.
           </p>
-          <p className="text-[14px] leading-[1.7] mb-8 reveal stagger-3" style={{ color: "rgba(36, 19, 10, 0.7)" }}>
+          <p className="text-[16px] leading-[1.7] mb-8 reveal stagger-3" style={{ color: "rgba(36, 19, 10, 0.85)" }}>
             From everyday dining to life&apos;s biggest celebrations, we bring people together with delicious food,
             warmth and unforgettable experiences.
           </p>
@@ -82,10 +82,10 @@ export function AboutPreview() {
               >
                 {item.icon}
               </div>
-              <h3 className="text-[16.5px] font-display font-semibold mb-2 leading-snug" style={{ color: "#24130A" }}>
+              <h3 className="text-[18px] font-display font-semibold mb-2 leading-snug" style={{ color: "#24130A" }}>
                 {item.title}
               </h3>
-              <p className="text-[14.5px] leading-[1.6]" style={{ color: "rgba(36, 19, 10, 0.65)" }}>
+              <p className="text-[14.5px] leading-[1.6]" style={{ color: "rgba(36, 19, 10, 0.75)" }}>
                 {item.desc}
               </p>
             </div>

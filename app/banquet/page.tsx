@@ -60,7 +60,7 @@ export default function BanquetPage() {
   return (
     <>
       <HomeScrollAnimations />
-      <main className="bg-[#fdf9f1] text-[#3a2016] min-h-screen font-sans" style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}>
+      <main className="bg-[#fdf9f1] text-[#3a2016] min-h-screen font-sans">
         {/* Hero Section */}
         <section className="relative w-full h-[90dvh] min-h-[650px] flex items-center justify-center text-center overflow-hidden">
           <div className="absolute inset-0">
@@ -75,7 +75,7 @@ export default function BanquetPage() {
           <div className="container mx-auto relative z-10 px-6 flex flex-col items-center">
             <div className="flex items-center gap-4 mb-6 reveal">
               <div className="w-8 h-[1px] bg-[#d49a2a]"></div>
-              <span className="text-[#D49A2A] text-sm tracking-[0.2em] uppercase font-medium">Banquet & Events</span>
+              <span className="text-[#D49A2A] text-sm tracking-[0.2em] uppercase font-bold">Banquet & Events</span>
               <div className="w-8 h-[1px] bg-[#d49a2a]"></div>
             </div>
             
@@ -91,13 +91,13 @@ export default function BanquetPage() {
             <div className="flex flex-wrap items-center justify-center gap-6 reveal stagger-4">
               <Link
                 href="#events"
-                className="bg-[#8f2a12] hover:bg-[#7b230e] text-white px-8 py-3.5 rounded-sm transition-colors duration-300 font-medium flex items-center gap-2"
+                className="bg-[#8f2a12] hover:bg-[#7b230e] text-white px-8 py-3.5 rounded-sm transition-colors duration-300 font-semibold text-[15px] flex items-center gap-2"
               >
                 Explore Our Halls &rarr;
               </Link>
               <Link
                 href="/contact"
-                className="border border-[#d49a2a] text-[#D49A2A] bg-transparent hover:bg-[#d49a2a] hover:text-[#24130A] px-8 py-3.5 rounded-sm transition-colors duration-300 font-medium flex items-center gap-2"
+                className="border border-[#d49a2a] text-[#D49A2A] bg-transparent hover:bg-[#d49a2a] hover:text-[#24130A] px-8 py-3.5 rounded-sm transition-colors duration-300 font-semibold text-[15px] flex items-center gap-2"
               >
                 <CalendarDays size={18} /> Book an Event
               </Link>
@@ -131,7 +131,7 @@ export default function BanquetPage() {
                   </div>
                   <div className="p-8 flex flex-col flex-grow">
                     <h3 className="text-2xl text-[#8f2a12] font-semibold mb-3" style={{ fontFamily: "var(--font-display)" }}>{event.title}</h3>
-                    <p className="text-[15px] text-[#6b584d] mb-6 flex-grow leading-relaxed">{event.desc}</p>
+                    <p className="text-[15.5px] text-[#554035] mb-6 flex-grow leading-relaxed">{event.desc}</p>
                     <div className="flex flex-col gap-3 pt-5 border-t border-[#f5e9d2]/60">
                       <div className="flex items-center gap-3 text-[#5c4436] text-[15px]">
                         <Users size={18} className="text-[#D49A2A]" />

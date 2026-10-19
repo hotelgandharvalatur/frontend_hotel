@@ -70,30 +70,30 @@ export function AmbienceSection() {
             style={{ width: viewportWidth ? `${Math.min(viewportWidth * 0.6, 560)}px` : "520px" }}
             className="h-full shrink-0 flex flex-col justify-center px-6 md:px-16"
           >
-            <p className="mb-4 font-bold tracking-widest text-sm" style={{ color: "#A83216" }}>OUR EXPERIENCES</p>
-            <h2 className="text-[36px] md:text-[52px] font-display font-semibold leading-[1.1] mb-6" style={{ color: "#24130A", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}>
+            <p className="mb-4 font-bold tracking-widest text-[13px]" style={{ color: "#A83216" }}>OUR EXPERIENCES</p>
+            <h2 className="text-[36px] md:text-[48px] lg:text-[52px] font-display font-semibold leading-[1.1] mb-6" style={{ color: "#24130A" }}>
               Made for Every<br /><span style={{ color: "#A83216" }}>Special Moment.</span>
             </h2>
             <div className="w-16 h-[2px] mb-6" style={{ backgroundColor: "#D49A2A" }} />
-            <p className="max-w-md text-[15px] leading-[1.7] mb-8" style={{ color: "rgba(36, 19, 10, 0.7)" }}>
+            <p className="max-w-md text-[16px] md:text-[17px] leading-[1.7] mb-8" style={{ color: "rgba(36, 19, 10, 0.85)" }}>
               From family dining to memorable celebrations, Gandharva Hotel brings authentic
               vegetarian food, warm hospitality and beautiful spaces together.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
-              <Link href="/gallery" className="inline-flex items-center gap-2 text-sm font-bold px-6 py-3 rounded-sm transition-all duration-200"
+              <Link href="/gallery" className="inline-flex items-center gap-2 text-[15px] font-bold px-6 py-3 rounded-sm transition-all duration-200"
                 style={{ backgroundColor: "#A83216", color: "#FFF7E8" }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#8F2A12")}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#A83216")}>
                 <ImageIcon size={16} /> View Gallery
               </Link>
-              <Link href="/banquet" className="inline-flex items-center gap-2 text-sm font-bold px-6 py-3 rounded-sm transition-all duration-200"
+              <Link href="/banquet" className="inline-flex items-center gap-2 text-[15px] font-bold px-6 py-3 rounded-sm transition-all duration-200"
                 style={{ border: "1.5px solid #A83216", color: "#A83216", backgroundColor: "transparent" }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(168, 50, 22, 0.08)")}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}>
                 <Building2 size={16} /> Explore Banquet Hall
               </Link>
             </div>
-            <div className="flex items-center gap-2 text-sm font-semibold" style={{ color: "#A83216" }}>
+            <div className="flex items-center gap-2 text-[14px] font-semibold tracking-wider" style={{ color: "#A83216" }}>
               SCROLL TO EXPLORE <ArrowRight size={16} />
             </div>
           </div>
@@ -108,8 +108,8 @@ export function AmbienceSection() {
               <div className="mt-5">
                 <p className="text-[20px] font-display font-bold mb-1" style={{ color: "#A83216" }}>{exp.number}</p>
                 <div className="w-7 h-[2px] mb-3" style={{ backgroundColor: "#D49A2A" }} />
-                <h3 className="text-[15px] font-bold tracking-wide mb-2" style={{ color: "#24130A" }}>{exp.title.toUpperCase()}</h3>
-                <p className="text-[13px] leading-[1.6] max-w-sm" style={{ color: "rgba(36, 19, 10, 0.65)" }}>{exp.desc}</p>
+                <h3 className="text-[16px] font-bold tracking-wide mb-2" style={{ color: "#24130A" }}>{exp.title.toUpperCase()}</h3>
+                <p className="text-[14px] leading-[1.6] max-w-sm" style={{ color: "rgba(36, 19, 10, 0.78)" }}>{exp.desc}</p>
               </div>
             </div>
           ))}
@@ -120,8 +120,8 @@ export function AmbienceSection() {
           >
             <p className="text-[13px] font-bold mb-2" style={{ color: "#D49A2A" }}></p>
             <h3 className="text-[32px] font-display font-semibold mb-3" style={{ color: "#FFF7E8" }}>Your Turn.</h3>
-            <p className="mb-8 text-[15px]" style={{ color: "rgba(255, 247, 232, 0.8)" }}>Come taste the tradition for yourself.</p>
-            <Link href="/menu" className="inline-flex items-center gap-2 text-sm font-bold px-8 py-4 rounded-full transition-all duration-200"
+            <p className="mb-8 text-[16px]" style={{ color: "rgba(255, 247, 232, 0.88)" }}>Come taste the tradition for yourself.</p>
+            <Link href="/menu" className="inline-flex items-center gap-2 text-[15px] font-bold px-8 py-4 rounded-full transition-all duration-200"
               style={{ backgroundColor: "#FFF7E8", color: "#A83216" }}
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#EFE8DA")}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#FFF7E8")}>

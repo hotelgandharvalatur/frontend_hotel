@@ -33,9 +33,11 @@ export function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setIsOpen(false);
-  }, [pathname]);
+  }
 
   return (
     <nav
@@ -69,7 +71,7 @@ export function Nav() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-[13px] font-medium transition-colors relative group py-2"
+                    className="text-[15px] font-medium transition-colors relative group py-2"
                     style={{ color: isActive ? "#D49A2A" : "#FFF7E8" }}
                   >
                     {link.label}
@@ -85,7 +87,7 @@ export function Nav() {
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setIsCartOpen(true)}
-                className="relative p-2 text-[#FFF7E8] hover:text-[#D49A2A] transition-colors flex items-center gap-2 font-medium text-[13px]"
+                className="relative p-2 text-[#FFF7E8] hover:text-[#D49A2A] transition-colors flex items-center gap-2 font-medium text-[14px]"
                 aria-label="Open cart"
               >
                 <div className="relative">
@@ -101,7 +103,7 @@ export function Nav() {
 
               <Link
                 href="/contact"
-                className="text-[13px] font-bold flex items-center justify-center transition-all duration-200"
+                className="text-[14px] font-semibold flex items-center justify-center transition-all duration-200"
                 style={{
                   backgroundColor: "#A83216",
                   color: "#FFF7E8",
@@ -159,7 +161,7 @@ export function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[14.6px] font-medium transition-colors p-2 rounded-sm"
+                className="text-[16px] font-medium transition-colors p-2 rounded-sm"
                 style={{
                   color: isActive ? "#D49A2A" : "#FFF7E8",
                   backgroundColor: isActive ? "rgba(255, 255, 255, 0.03)" : "transparent"
@@ -172,7 +174,7 @@ export function Nav() {
 
           <button
             onClick={() => { setIsOpen(false); setIsCartOpen(true); }}
-            className="w-full text-left text-[14.6px] font-medium transition-colors p-2 rounded-sm flex items-center justify-between text-[#FFF7E8]"
+            className="w-full text-left text-[16px] font-medium transition-colors p-2 rounded-sm flex items-center justify-between text-[#FFF7E8]"
           >
             <span className="flex items-center gap-2">
               <ShoppingBag size={18} /> Cart
@@ -187,7 +189,7 @@ export function Nav() {
           <div className="pt-4 pb-2 border-t" style={{ borderColor: "rgba(212, 154, 42, 0.2)" }}>
             <Link
               href="/contact"
-              className="block text-center text-[13px] font-bold px-6 py-3 rounded-sm transition-colors"
+              className="block text-center text-[15px] font-semibold px-6 py-3 rounded-sm transition-colors"
               style={{ backgroundColor: "#A83216", color: "#FFF7E8" }}
             >
               Book a Table

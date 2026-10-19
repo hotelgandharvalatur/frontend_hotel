@@ -88,7 +88,7 @@ export default function AboutPage() {
           <div className="w-full lg:w-1/2 relative reveal stagger-1">
             <div className="flex items-center gap-4 mb-[18px]">
               <div className="w-8 h-[1px] bg-[#A83216] relative after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-1.5 after:h-1.5 after:rotate-45 after:bg-[#A83216]"></div>
-              <p className="font-bold tracking-widest text-[13.2px] text-[#A83216] uppercase">
+              <p className="font-bold tracking-widest text-[13px] text-[#A83216] uppercase">
                 OUR STORY
               </p>
             </div>
@@ -100,13 +100,13 @@ export default function AboutPage() {
 
             <div className="w-24 h-[1px] bg-[#D49A2A] mb-[25px]"></div>
 
-            <p className="text-[14.9px] leading-[1.65] text-[rgba(36,19,10,0.8)] mb-[29px] max-w-lg">
+            <p className="text-[16px] leading-[1.7] text-[rgba(36,19,10,0.85)] mb-[29px] max-w-lg">
               From our humble beginnings to becoming a beloved destination for families and food lovers, our journey is built on passion, tradition and the joy of serving delicious pure vegetarian food.
             </p>
 
             <Link
               href="/menu"
-              className="inline-flex items-center gap-3 px-[25px] py-[11px] border border-[#A83216] text-[13.2px] font-semibold rounded hover:bg-[#A83216] hover:text-white transition-all duration-300 relative z-10 group text-[#A83216]"
+              className="inline-flex items-center gap-3 px-[25px] py-[11px] border border-[#A83216] text-[15px] font-semibold rounded hover:bg-[#A83216] hover:text-white transition-all duration-300 relative z-10 group text-[#A83216]"
             >
               <Calendar size={17} />
               View Menu
@@ -143,7 +143,7 @@ export default function AboutPage() {
                 <Leaf size={34} style={{ color: "#A83216" }} strokeWidth={1.5} />
               </div>
               <h3 className="text-xl font-display font-semibold mb-3 text-[#A83216]">Pure Vegetarian</h3>
-              <p className="text-[15px] text-[rgba(36,19,10,0.7)] leading-relaxed max-w-[240px]">
+              <p className="text-[15px] text-[rgba(36,19,10,0.85)] leading-relaxed max-w-[240px]">
                 100% pure vegetarian food prepared with the freshest ingredients.
               </p>
             </div>
@@ -154,7 +154,7 @@ export default function AboutPage() {
                 <Soup size={34} style={{ color: "#A83216" }} strokeWidth={1.5} />
               </div>
               <h3 className="text-xl font-display font-semibold mb-3 text-[#A83216]">Authentic Taste</h3>
-              <p className="text-[15px] text-[rgba(36,19,10,0.7)] leading-relaxed max-w-[240px]">
+              <p className="text-[15px] text-[rgba(36,19,10,0.85)] leading-relaxed max-w-[240px]">
                 Traditional recipes and timeless flavors that bring you back for more.
               </p>
             </div>
@@ -165,7 +165,7 @@ export default function AboutPage() {
                 <Users size={34} style={{ color: "#A83216" }} strokeWidth={1.5} />
               </div>
               <h3 className="text-xl font-display font-semibold mb-3 text-[#A83216]">Warm Hospitality</h3>
-              <p className="text-[15px] text-[rgba(36,19,10,0.7)] leading-relaxed max-w-[240px]">
+              <p className="text-[15px] text-[rgba(36,19,10,0.85)] leading-relaxed max-w-[240px]">
                 We treat every guest like family and serve with a smile.
               </p>
             </div>
@@ -176,7 +176,7 @@ export default function AboutPage() {
                 <Award size={34} style={{ color: "#A83216" }} strokeWidth={1.5} />
               </div>
               <h3 className="text-xl font-display font-semibold mb-3 text-[#A83216]">Quality & Hygiene</h3>
-              <p className="text-[15px] text-[rgba(36,19,10,0.7)] leading-relaxed max-w-[240px]">
+              <p className="text-[15px] text-[rgba(36,19,10,0.85)] leading-relaxed max-w-[240px]">
                 High standards of quality, cleanliness and food safety always.
               </p>
             </div>

@@ -21,7 +21,7 @@ export function MenuHighlights() {
         <p className="mb-1 font-bold tracking-widest text-xs reveal" style={{ color: "#D49A2A" }}>
           POPULAR DISHES
         </p>
-        <h2 className="text-[28px] lg:text-[32px] font-display font-semibold reveal stagger-1" style={{ color: "#FFF7E8" }}>
+        <h2 className="text-[30px] lg:text-[34px] font-display font-semibold reveal stagger-1" style={{ color: "#FFF7E8" }}>
           Our Menu Highlights
         </h2>
       </div>
@@ -47,12 +47,12 @@ export function MenuHighlights() {
             </div>
 
             <h3
-              className="text-[13.5px] font-display font-semibold text-center leading-snug max-w-[150px]"
+              className="text-[16px] font-display font-semibold text-center leading-snug max-w-[160px]"
               style={{ color: "#FFF7E8" }}
             >
               {dish.name}
             </h3>
-            <p className="text-[13.5px] font-semibold mt-1" style={{ color: "#D49A2A" }}>
+            <p className="text-[15px] font-bold mt-1" style={{ color: "#D49A2A" }}>
               {dish.price}
             </p>
           </div>
@@ -63,7 +63,7 @@ export function MenuHighlights() {
       <div className="text-center mt-10 reveal stagger-4">
         <Link
           href="/menu"
-          className="inline-flex items-center text-[13px] font-bold px-6 py-2.5 rounded-[4px] transition-all duration-200"
+          className="inline-flex items-center text-[15px] font-semibold px-7 py-3 rounded-[4px] transition-all duration-200"
           style={{ border: "1.5px solid #F5E9D2", color: "#F5E9D2", backgroundColor: "transparent" }}
           onMouseEnter={(e) => {
             e.currentTarget.style.backgroundColor = "#F5E9D2";

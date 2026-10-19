@@ -82,9 +82,9 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectProps>(
           style={{ paddingTop: "1.5rem", paddingBottom: "0.5rem" }}
           {...props}
         >
-          <option value="">— Select —</option>
+          <option value="" className="bg-[#24130A] text-[#FFF7E8]">— Select —</option>
           {options.map((o) => (
-            <option key={o.value} value={o.value}>
+            <option key={o.value} value={o.value} className="bg-[#24130A] text-[#FFF7E8]">
               {o.label}
             </option>
           ))}
@@ -92,12 +92,12 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectProps>(
         <label
           htmlFor={inputId}
           className="field-label"
-          style={{ top: "0.2rem", fontSize: "0.7rem", color: "var(--accent-light)", letterSpacing: "0.08em", textTransform: "uppercase" }}
+          style={{ top: "0.2rem", fontSize: "0.75rem", fontWeight: 600, color: "var(--accent-light)", letterSpacing: "0.08em", textTransform: "uppercase" }}
         >
           {label}
         </label>
         {error && (
-          <p className="text-red-400 text-xs mt-1 font-medium">{error}</p>
+          <p className="text-red-400 text-[13px] mt-1 font-medium">{error}</p>
         )}
       </div>
     );

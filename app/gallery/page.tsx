@@ -92,7 +92,7 @@ export default function GalleryPage() {
   const activeItem = lightboxIndex !== null ? items[lightboxIndex] : null;
 
   return (
-    <div ref={containerRef as React.Ref<HTMLDivElement>} className="bg-[#F5E9D2] min-h-screen flex flex-col" style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}>
+    <div ref={containerRef as React.Ref<HTMLDivElement>} className="bg-[#F5E9D2] min-h-screen flex flex-col">
       {/* 1. Hero Section */}
       <section className="pt-28 md:pt-36 pb-10 relative z-10 text-center">
         <div className="container mx-auto px-6 reveal">
@@ -120,7 +120,7 @@ export default function GalleryPage() {
               <button
                 key={t.id}
                 onClick={() => setFilter(t.id as any)}
-                className={`text-[13px] font-semibold tracking-wide px-8 py-2.5 rounded-full transition-all duration-300 ${
+                className={`text-[14.5px] font-semibold tracking-wide px-8 py-2.5 rounded-full transition-all duration-300 ${
                   filter === t.id
                     ? "bg-[#59160a] text-[#FFF7E8] shadow-md border border-[#59160a]"
                     : "bg-[#FCF8F3] text-[#59160a] border border-[#D49A2A]/20 hover:border-[#D49A2A]/50 hover:bg-[#F5E9D2]"
@@ -137,7 +137,7 @@ export default function GalleryPage() {
               <button
                 key={cat}
                 onClick={() => setCategory(cat)}
-                className={`text-[13px] font-semibold tracking-wide px-6 py-2 rounded-full transition-all duration-300 ${
+                className={`text-[14.5px] font-semibold tracking-wide px-6 py-2 rounded-full transition-all duration-300 ${
                   category === cat
                     ? "bg-[#59160a] text-[#FFF7E8] shadow-sm border border-[#59160a]"
                     : "bg-transparent text-[#24130A] border border-[#24130A]/20 hover:border-[#D49A2A] hover:text-[#59160a]"
