@@ -135,6 +135,18 @@ export interface MenuItem {
   updatedAt: string;
 }
 
+export interface MenuHighlightItem {
+  _id: string;
+  menuItemId: string;
+  name: string;
+  description?: string;
+  price: number;
+  image?: string;
+  veg?: boolean;
+  displayOrder: number;
+  isActive: boolean;
+}
+
 // ─── Catering ─────────────────────────────────────────────────
 export interface CateringPackage {
   _id: string;

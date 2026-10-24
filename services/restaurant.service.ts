@@ -42,4 +42,15 @@ export const restaurantService = {
       return [];
     }
   },
+
+  getMenuHighlights: async (): Promise<import("@/types").MenuHighlightItem[]> => {
+    try {
+      const res = await api.get<{ data: { highlights: import("@/types").MenuHighlightItem[] } }>(
+        "/restaurant/highlights"
+      );
+      return res.data.data.highlights || [];
+    } catch {
+      return [];
+    }
+  },
 };
