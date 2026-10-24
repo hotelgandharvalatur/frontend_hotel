@@ -28,17 +28,24 @@ export const banquetService = {
     customerName: string;
     phone: string;
     email: string;
-    hall: string;
+    hall?: string;
     eventType: string;
     date: string;
     time: string;
     numberOfGuests: number;
     foodRequirement?: string;
+    venueRequirements?: string;
+    specialRequests?: string;
     notes?: string;
   }): Promise<BanquetBooking> => {
+    // Sanitize empty hall string so it doesn't fail MongoDB ObjectId validation
+    const payload = { ...data };
+    if (!payload.hall) {
+      delete payload.hall;
+    }
     const res = await api.post<{ data: { booking: BanquetBooking } }>(
       "/banquet/book",
-      data
+      payload
     );
     return res.data.data.booking;
   },

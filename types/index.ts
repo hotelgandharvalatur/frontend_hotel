@@ -33,17 +33,41 @@ export interface BanquetBooking {
   customerName: string;
   phone: string;
   email: string;
-  hall: BanquetHall | string;
+  hall?: BanquetHall | string;
   eventType: string;
   date: string;
   time: string;
   numberOfGuests: number;
   foodRequirement?: string;
+  venueRequirements?: string;
+  specialRequests?: string;
   notes?: string;
   status: BookingStatus;
   createdAt: string;
   updatedAt: string;
 }
+
+// ─── Table Booking ─────────────────────────────────────────────
+export type TableBookingStatus = "Pending" | "Confirmed" | "Cancelled" | "Completed";
+
+export interface TableBooking {
+  _id: string;
+  referenceNumber: string;
+  customerName: string;
+  name?: string;
+  phone: string;
+  email: string;
+  date: string;
+  time: string;
+  numberOfGuests: number;
+  guests?: number;
+  specialRequests?: string;
+  notes?: string;
+  status: TableBookingStatus;
+  createdAt: string;
+  updatedAt: string;
+}
+
 
 // ─── Event ────────────────────────────────────────────────────
 export interface Event {

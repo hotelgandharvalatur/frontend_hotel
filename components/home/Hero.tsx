@@ -84,7 +84,7 @@ export function Hero() {
             </Link>
 
             <Link
-              href="/contact"
+              href="/book-table"
               className="group flex items-center justify-center font-semibold transition-all duration-200 w-full sm:w-auto"
               style={{
                 border: "1.5px solid #D49A2A",

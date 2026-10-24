@@ -102,7 +102,7 @@ export function Nav() {
               </button>
 
               <Link
-                href="/contact"
+                href="/book-table"
                 className="text-[14px] font-semibold flex items-center justify-center transition-all duration-200"
                 style={{
                   backgroundColor: "#A83216",
@@ -188,7 +188,7 @@ export function Nav() {
 
           <div className="pt-4 pb-2 border-t" style={{ borderColor: "rgba(212, 154, 42, 0.2)" }}>
             <Link
-              href="/contact"
+              href="/book-table"
               className="block text-center text-[15px] font-semibold px-6 py-3 rounded-sm transition-colors"
               style={{ backgroundColor: "#A83216", color: "#FFF7E8" }}
             >

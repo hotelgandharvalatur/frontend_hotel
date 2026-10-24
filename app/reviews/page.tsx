@@ -286,7 +286,7 @@ export default function ReviewsPage() {
             </div>
           </div>
           <div className="relative z-10">
-            <LinkButton href="/contact" variant="primary" className="px-8 py-3.5 flex items-center gap-2.5 rounded-md text-[15px]">
+            <LinkButton href="/book-table" variant="primary" className="px-8 py-3.5 flex items-center gap-2.5 rounded-md text-[15px]">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                 <line x1="16" y1="2" x2="16" y2="6"></line>

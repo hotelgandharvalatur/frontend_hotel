@@ -144,6 +144,25 @@ export default async function EventsPage() {
           )}
         </div>
       </section>
+
+      {/* Host an Event CTA */}
+      <section className="section-padding" style={{ background: "var(--ink)", borderTop: "1px solid var(--border)" }}>
+        <div className="container-wide mx-auto text-center max-w-3xl">
+          <p className="eyebrow mb-3">Host With Us</p>
+          <h2 className="display-lg mb-4" style={{ fontFamily: "var(--font-display)" }}>
+            Planning a Wedding, Conference, or Private Celebration?
+          </h2>
+          <p className="body-lg mb-8 max-w-xl mx-auto">
+            Book our luxurious banquet halls with premium vegetarian catering, modern sound systems, and dedicated event coordination.
+          </p>
+          <Link
+            href="/banquet/book"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#8f2a12] hover:bg-[#7b230e] text-white font-medium text-[15px] rounded-sm transition-colors shadow-md"
+          >
+            Book an Event Hall &rarr;
+          </Link>
+        </div>
+      </section>
     </>
   );
 }

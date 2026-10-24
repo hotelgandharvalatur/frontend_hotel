@@ -96,7 +96,7 @@ export default function BanquetPage() {
                 Explore Our Halls &rarr;
               </Link>
               <Link
-                href="/contact"
+                href="/banquet/book"
                 className="border border-[#d49a2a] text-[#D49A2A] bg-transparent hover:bg-[#d49a2a] hover:text-[#24130A] px-8 py-3.5 rounded-sm transition-colors duration-300 font-semibold text-[15px] flex items-center gap-2"
               >
                 <CalendarDays size={18} /> Book an Event
@@ -142,6 +142,12 @@ export default function BanquetPage() {
                         <span>{event.hall}</span>
                       </div>
                     </div>
+                    <Link
+                      href={`/banquet/book?eventType=${encodeURIComponent(event.title)}`}
+                      className="mt-5 text-center py-2.5 px-4 bg-[#8f2a12] hover:bg-[#7b230e] text-white text-sm font-semibold rounded transition-colors"
+                    >
+                      Book for {event.title}
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -221,7 +227,7 @@ export default function BanquetPage() {
               <p className="text-[17px] text-[#5c4436] mb-10">
                 Our team is here to help you create unforgettable memories.
               </p>
-              <Link href="/contact" className="inline-flex items-center gap-2 bg-[#8f2a12] hover:bg-[#7b230e] text-white px-10 py-4 rounded-sm transition-colors duration-300 font-medium text-lg shadow-md">
+              <Link href="/banquet/book" className="inline-flex items-center gap-2 bg-[#8f2a12] hover:bg-[#7b230e] text-white px-10 py-4 rounded-sm transition-colors duration-300 font-medium text-lg shadow-md">
                 Enquire Now &rarr;
               </Link>
             </div>

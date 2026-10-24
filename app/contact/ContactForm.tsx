@@ -30,7 +30,11 @@ export function ContactForm() {
   const onSubmit = async (data: FormData) => {
     setLoading(true);
     try {
-      await contactService.createInquiry(data);
+      const payload = {
+        ...data,
+        phone: data.phone && data.phone.trim().length > 0 ? data.phone.trim() : undefined,
+      };
+      await contactService.createInquiry(payload);
       setSuccess(true);
       reset();
       toast.success("Message sent successfully!");
